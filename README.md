@@ -70,6 +70,86 @@ Once you have your project workspace set up:
 
 **You're now ready to start building!** Follow the complete workflow in **`WORKFLOW_GUIDE.md`**.
 
+## 🚀 Getting Started: Your First 15 Minutes
+
+### **You've Set Up Your Workspace - Now What?**
+
+**Congratulations!** You have a new project workspace from the template. Here's exactly what to do next:
+
+### **⚡ Immediate Actions (5 minutes)**
+
+1. **📂 Open your project workspace** in VS Code:
+   ```bash
+   cd your-project-name
+   code .
+   ```
+
+2. **✅ Verify setup** - Run the workspace checklist from WORKFLOW_GUIDE.md:
+   ```bash
+   pwd  # Should show your project path
+   ls -la  # Should see .ai-rules/, .project-docs/, src/, AI_CONTEXT.md
+   ```
+
+3. **🎯 Choose your path** based on your current needs:
+
+### **📋 Path A: Start a New Project (Most Common)**
+**⏱️ Time: 10 minutes**  
+**Outcome:** Populated project documents + ready to build first feature
+
+```
+→ Follow Step 1 in WORKFLOW_GUIDE.md
+→ AI-driven interview creates your project foundation  
+→ Generates: Roadmap.md, VibeTesting.md, ComponentLibrary.md, SLC_Session_Notes.md, AI_CONTEXT.md
+→ Ready to build features with Steps 2-5
+```
+
+**Next Action:** Open WORKFLOW_GUIDE.md and go to "Step 1: Generate Project Context Documents"
+
+### **📋 Path B: Add Template to Existing Project**
+**⏱️ Time: 5 minutes**  
+**Outcome:** Template integrated with your existing codebase
+
+```
+→ Move your existing code into src/ directory
+→ Manually populate AI_CONTEXT.md with your project details
+→ Skip to Step 2 in WORKFLOW_GUIDE.md
+→ Ready to build new features with AI assistance
+```
+
+**Next Action:** Move existing code to `src/`, then populate `AI_CONTEXT.md` manually
+
+### **📋 Path C: Explore and Learn**
+**⏱️ Time: 15 minutes**  
+**Outcome:** Understanding of the workflow without committing to a project
+
+```
+→ Read through WORKFLOW_GUIDE.md completely
+→ Explore .ai-rules/ directory to understand AI instructions
+→ Review .project-docs/ templates
+→ Come back when ready to start a real project
+```
+
+**Next Action:** Open WORKFLOW_GUIDE.md and read the complete workflow
+
+---
+
+### **🎯 Success Indicators**
+
+**You're ready to proceed when:**
+- ✅ You're in your project workspace (not the template)
+- ✅ All template files are present in your workspace
+- ✅ You've chosen Path A, B, or C above
+- ✅ You know your immediate next action
+
+### **🆘 Need Help?**
+
+**Common Issues:**
+- **"I don't see .ai-rules/ directory"** → You're still in the template. Navigate to your project workspace.
+- **"Which AI should I use?"** → Start with any Chat AI (Claude, ChatGPT, Gemini) for strategy, then use CLI AI for implementation.
+- **"I don't know what to build"** → Follow Path A - the AI interview will help you define your project.
+
+**Next Steps:** Open `WORKFLOW_GUIDE.md` and follow your chosen path!
+
 ---
 
 ## Template Structure

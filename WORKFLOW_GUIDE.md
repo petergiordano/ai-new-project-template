@@ -268,15 +268,39 @@ For any new feature, follow this process. **Important:** Always begin new AI ses
 
 ### **🚀 Getting Started Right Now**
 
-**If this is your first time:**
-1. **Complete workspace setup** (see top of this guide)
-2. **Run Step 1** to generate your project foundation
-3. **Start building features** with Steps 2-5
+**If this is your first time using the template:**
+1. **✅ Complete workspace setup** (see top of this guide)
+2. **📝 Run Step 1** to generate your project foundation
+3. **⚡ Start building features** with Steps 2-5
 
-**If you have an existing project:**
-1. **Load your AI_CONTEXT.md** (Step 2)
-2. **Define your next feature** (Step 3)
-3. **Break it down and build** (Steps 4-5)
+**If you have an existing project with context:**
+1. **🔄 Load your AI_CONTEXT.md** (Step 2)
+2. **📋 Define your next feature** (Step 3)
+3. **🛠️ Break it down and build** (Steps 4-5)
+
+**If you're exploring the workflow:**
+1. **📖 Read this entire guide** to understand the process
+2. **🔍 Explore .ai-rules/ directory** to see AI instructions
+3. **📝 Review .project-docs/ templates** to understand the planning approach
+4. **🎯 Come back when ready** to start a real project
+
+---
+
+### **⚡ Quick Decision Tree**
+
+**Question: What's your current situation?**
+
+- **"I just set up my workspace and I'm ready to start a new project"**  
+  → **Go to Step 1** (Generate Project Context Documents)
+
+- **"I have an existing project and want to add a new feature"**  
+  → **Go to Step 2** (Brief AI with Dynamic Context)
+
+- **"I want to understand how this all works first"**  
+  → **Keep reading** this guide completely, then return to Step 1
+
+- **"I have an existing codebase and want to use this template"**  
+  → **Move your code to src/**, manually populate AI_CONTEXT.md, then **go to Step 2**
 
 This systematic approach ensures that both you and the AI have comprehensive context at every stage, leading to more consistent, higher-quality results with built-in quality assurance and error prevention.
 
