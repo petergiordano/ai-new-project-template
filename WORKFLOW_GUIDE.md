@@ -6,6 +6,47 @@ This document explains the guiding philosophies, the roles of each participant, 
 
 ---
 
+## 🏗️ Workspace Setup & Prerequisites
+
+### **Before You Begin: Verify Your Workspace**
+
+**Important:** Ensure you're working in your project workspace, not the template repository.
+
+#### **✅ Workspace Checklist:**
+```bash
+# You should be in your project directory:
+pwd  # Should show: /path/to/your-project-name (NOT ai-new-project-template)
+
+# Verify essential files exist:
+ls -la
+# Should see:
+# - .ai-rules/           (copied from template)
+# - .project-docs/       (copied from template) 
+# - src/                 (your source code directory)
+# - AI_CONTEXT.md        (template - will be populated)
+# - WORKFLOW_GUIDE.md    (this file)
+# - README.md            (customize for your project)
+```
+
+#### **🔧 Prerequisites:**
+- **VS Code** with terminal access
+- **Git** for version control
+- **AI Assistant Access:**
+  - **Chat AI:** ChatGPT, Gemini, Claude (web interface) - for strategy and planning
+  - **CLI AI:** Claude Code CLI, Gemini CLI, or similar - for implementation
+- **Your project workspace** properly set up from the template
+
+### **First-Time Setup: Initialize Your Project**
+
+If you haven't completed workspace setup yet:
+
+1. **Return to README.md** and complete "Quick Start" steps 1-2
+2. **Verify all template files** are copied to your workspace root
+3. **Customize your README.md** for your specific project
+4. **Come back here** to begin the development workflow
+
+---
+
 ## Using Plan Mode Effectively
 
 *This section applies when using Claude Code CLI and leverages its built-in Plan Mode feature.*
@@ -85,6 +126,9 @@ Before starting any coding, it's crucial to establish the project's foundation.
 #### **Step 1: Generate Project Context Documents**
 Instead of manually filling out the planning documents, use the AI-assisted initialization process to create your project foundation.
 
+**🎯 Outcome:** You'll have 5 fully populated planning documents plus a project-specific AI_CONTEXT.md
+
+**📋 Process:**
 1.  **You to Chat Assistant:** "Help me initialize a new project using the template."
 2.  **Chat Assistant to You:** Provides the initialization prompt based on `.ai-rules/00_project-initialization.md`.
 3.  **You to CLI Assistant:** Paste the initialization prompt into the terminal.
@@ -99,7 +143,7 @@ Instead of manually filling out the planning documents, use the AI-assisted init
 7.  **CLI Assistant:** **Exits Plan Mode** and generates all five populated documents with project-specific Plan Mode guidance.
 8.  **You:** Save the generated documents in your project (`.project-docs/` for the first four, root directory for `AI_CONTEXT.md`).
 
-**Alternative Option:** If you prefer to fill out the context documents manually, you can skip Step 1 and complete the templates yourself, but you'll need to manually create your project-specific `AI_CONTEXT.md`.
+**⚡ Alternative Option:** If you prefer to fill out the context documents manually, you can skip Step 1 and complete the templates yourself, but you'll need to manually create your project-specific `AI_CONTEXT.md`.
 
 ### **Phase 2: Feature Implementation**
 
@@ -107,7 +151,7 @@ For any new feature, follow this process. **Important:** Always begin new AI ses
 
 #### **Step 2: Brief AI Assistants with Dynamic Context (Context Convergence)**
 
-**Goal**: Ensure all AI assistants have current, accumulated project context for optimal collaboration.
+**🎯 Goal**: Ensure all AI assistants have current, accumulated project context for optimal collaboration.
 
 **Enhanced Context Loading Process**:
 
@@ -149,54 +193,103 @@ For any new feature, follow this process. **Important:** Always begin new AI ses
    - **Between AI Types:** Chat AI prepares context-rich prompts for CLI AI
    - **Progress Updates:** Update AI_CONTEXT.md as features move through workflow stages
 
-**Critical Success Factors:**
+**✅ Critical Success Factors:**
 - ✅ AI demonstrates understanding of current project state
 - ✅ AI references existing patterns and architecture decisions
 - ✅ AI knows which features are active and their current status
 - ✅ AI follows established validation and testing approaches
+
 #### **Step 3: Create the Product Requirements Document (PRD)**
 
--   **Goal**: To define the feature requirements clearly enough for a junior developer to understand.
--   **Process**:
-    1.  **You to Chat Assistant:** "I need to build [feature]. Help me think through the requirements."
-    2.  **Chat Assistant to You:** Helps you brainstorm and prepares a detailed prompt for the CLI Assistant, using the rules from `.ai-rules/01_create-prd.md`.
-    3.  **You to CLI Assistant:** Paste the prepared prompt into the terminal. 
-    4.  **CLI Assistant:** **Enters Plan Mode** to understand how the feature fits into existing architecture and research similar implementations
-    5.  **CLI Assistant:** **Exits Plan Mode** and asks clarifying questions about the feature requirements
-    6.  **You:** Answer the questions. The CLI Assistant will then generate the final PRD.
-    7.  **You:** Save the PRD in a new `tasks/` directory (e.g., `tasks/prd-feature-name.md`).
+**🎯 Goal**: To define the feature requirements clearly enough for a junior developer to understand.
+
+**📋 Process**:
+1.  **You to Chat Assistant:** "I need to build [feature]. Help me think through the requirements."
+2.  **Chat Assistant to You:** Helps you brainstorm and prepares a detailed prompt for the CLI Assistant, using the rules from `.ai-rules/01_create-prd.md`.
+3.  **You to CLI Assistant:** Paste the prepared prompt into the terminal. 
+4.  **CLI Assistant:** **Enters Plan Mode** to understand how the feature fits into existing architecture and research similar implementations
+5.  **CLI Assistant:** **Exits Plan Mode** and asks clarifying questions about the feature requirements
+6.  **You:** Answer the questions. The CLI Assistant will then generate the final PRD.
+7.  **You:** Save the PRD in a new `tasks/` directory (e.g., `tasks/prd-feature-name.md`).
+
+**💡 Enhanced PRD Features:**
+- **Executable Success Criteria:** Specific commands to validate feature completion
+- **Context Integration:** References existing project patterns and architecture
+- **Validation Commands:** Built-in testing and quality gates
 
 #### **Step 4: Generate the Task List**
 
--   **Goal**: To break down the PRD into a detailed, step-by-step checklist.
--   **Process**:
-    1.  **You to Chat Assistant:** "Here is the PRD we just created. Prepare the prompt to turn this into a task list."
-    2.  **Chat Assistant to You:** Provides a prompt containing the rules from `.ai-rules/02_generate-tasks.md` and the PRD content.
-    3.  **You to CLI Assistant:** Paste the prepared prompt into the terminal.
-    4.  **CLI Assistant:** **Enters Plan Mode** to thoroughly analyze the PRD and examine existing codebase patterns
-    5.  **CLI Assistant:** **Exits Plan Mode** and generates a hierarchical task list based on the analysis
-    6.  **You:** Review the task list and save it (e.g., `tasks/tasks-feature-name.md`).
+**🎯 Goal**: To break down the PRD into a detailed, step-by-step checklist with integrated validation.
+
+**📋 Process**:
+1.  **You to Chat Assistant:** "Here is the PRD we just created. Prepare the prompt to turn this into a task list."
+2.  **Chat Assistant to You:** Provides a prompt containing the rules from `.ai-rules/02_generate-tasks.md` and the PRD content.
+3.  **You to CLI Assistant:** Paste the prepared prompt into the terminal.
+4.  **CLI Assistant:** **Enters Plan Mode** to thoroughly analyze the PRD and examine existing codebase patterns
+5.  **CLI Assistant:** **Exits Plan Mode** and generates a hierarchical task list based on the analysis
+6.  **You:** Review the task list and save it (e.g., `tasks/tasks-feature-name.md`).
+
+**✨ Enhanced Task Generation:**
+- **Progressive Validation Steps:** Each task includes validation checkpoints
+- **Dependency Mapping:** Tasks ordered based on architectural dependencies
+- **Error Prevention:** Common pitfall identification and mitigation
 
 #### **Step 5: Execute the Task List**
 
--   **Goal**: To implement the feature by completing one sub-task at a time, reviewing and testing at each step.
--   **Process**:
-    1.  **You to CLI Assistant:** Paste the rules from `.ai-rules/03_execute-tasks.md` into the terminal, followed by the content of your task list file.
-    2.  **CLI Assistant:** **Uses Plan Mode strategically** - enters Plan Mode for complex parent tasks to analyze context and plan implementation approach
-    3.  **CLI Assistant to You:** Provides the code for the **first sub-task** and then **PAUSES**.
-    4.  **You:** Implement and test the AI's suggestion in VS Code.
-    5.  **You:** If the code works, mark the task as complete (`[x]`) in your task file.
-    6.  **You to CLI Assistant:** Type **"Go"** to proceed to the next sub-task.
-    7.  **Loop:** Repeat steps 2-6 until all tasks are complete. The CLI Assistant will use Plan Mode again for complex tasks, debugging, or when issues arise.
+**🎯 Goal**: To implement the feature by completing one sub-task at a time, with systematic validation at each step.
+
+**📋 Process**:
+1.  **You to CLI Assistant:** Paste the rules from `.ai-rules/03_execute-tasks.md` into the terminal, followed by the content of your task list file.
+2.  **CLI Assistant:** **Uses Plan Mode strategically** - enters Plan Mode for complex parent tasks to analyze context and plan implementation approach
+3.  **CLI Assistant to You:** Provides the code for the **first sub-task** and then **PAUSES**.
+4.  **You:** Implement and test the AI's suggestion in VS Code.
+5.  **You:** If the code works, mark the task as complete (`[x]`) in your task file.
+6.  **You to CLI Assistant:** Type **"Go"** to proceed to the next sub-task.
+7.  **Loop:** Repeat steps 2-6 until all tasks are complete. The CLI Assistant will use Plan Mode again for complex tasks, debugging, or when issues arise.
+
+**🔄 Enhanced Task Execution:**
+- **4-Level Progressive Validation:** Syntax → Tests → Integration → Feature validation
+- **Error Correction Loops:** Systematic approach to fixing issues
+- **Context Accumulation:** Lessons learned feed back into AI_CONTEXT.md
 
 ---
 
-## Summary: Complete Workflow
+## 🎯 Summary: Complete Enhanced Workflow
 
-1. **Step 1:** Generate project context documents (includes creating project-specific `AI_CONTEXT.md`)
-2. **Step 2:** Brief AI with your populated `AI_CONTEXT.md` (at start of each new session)
-3. **Step 3:** Create PRD for your feature
-4. **Step 4:** Generate task list from PRD
-5. **Step 5:** Execute tasks one by one
+### **Phase 1: Foundation** 
+1. **✅ Verify Workspace Setup** - Confirm you're in project workspace with all template files
+2. **📝 Generate Project Context** - AI-driven interview creates all planning documents
 
-This systematic approach ensures that both you and the AI have comprehensive context at every stage, leading to more consistent, higher-quality results.
+### **Phase 2: Feature Development**
+3. **🔄 Load Dynamic Context** - Brief AI with accumulated project knowledge
+4. **📋 Create Enhanced PRD** - Feature requirements with validation criteria
+5. **📝 Generate Validated Tasks** - Detailed implementation plan with quality gates
+6. **⚡ Execute with Validation** - Progressive implementation with error correction
+
+### **🚀 Getting Started Right Now**
+
+**If this is your first time:**
+1. **Complete workspace setup** (see top of this guide)
+2. **Run Step 1** to generate your project foundation
+3. **Start building features** with Steps 2-5
+
+**If you have an existing project:**
+1. **Load your AI_CONTEXT.md** (Step 2)
+2. **Define your next feature** (Step 3)
+3. **Break it down and build** (Steps 4-5)
+
+This systematic approach ensures that both you and the AI have comprehensive context at every stage, leading to more consistent, higher-quality results with built-in quality assurance and error prevention.
+
+---
+
+## 🛠️ Advanced Features & Context Engineering
+
+This workflow leverages advanced context engineering principles:
+
+- **🔄 Dynamic Context Accumulation:** Your AI_CONTEXT.md evolves and improves with each feature
+- **✅ Progressive Validation Loops:** 4-level validation system prevents error accumulation  
+- **🎯 Context Convergence:** AI assistants maintain project awareness across sessions
+- **⚡ Command-Driven Structure:** Structured transitions between workflow phases
+- **🛡️ Plan Mode Integration:** Safe exploration and thoughtful planning before implementation
+
+**Ready to build? Start with Step 1 if this is a new project, or Step 2 if you have existing context!**
