@@ -159,6 +159,8 @@ This scaffolding provides a set of rule files and document templates to guide yo
 - **`README.md`**: (This file) Project overview - customize for your specific project
 - **`WORKFLOW_GUIDE.md`**: The primary user manual. **Your complete development guide.**
 - **`AI_CONTEXT.md`**: The master briefing document to provide context to your AI assistant
+- **`CLAUDE.md`**: Claude Code CLI context file (automatically loads AI_CONTEXT.md)
+- **`GEMINI.md`**: Gemini CLI context file (automatically loads AI_CONTEXT.md)
 
 ### **Workspace Structure After Setup:**
 ```
@@ -181,6 +183,8 @@ your-project-name/
 ├── src/                    # Your project's source code
 ├── tasks/                  # PRDs and task lists (created during workflow)
 ├── AI_CONTEXT.md          # Dynamic project context (accumulates as you build)
+├── CLAUDE.md              # Claude Code CLI automatic context loading
+├── GEMINI.md              # Gemini CLI automatic context loading
 ├── README.md              # Project overview (customize this!)
 └── WORKFLOW_GUIDE.md      # Complete development workflow guide
 ```
@@ -235,6 +239,8 @@ This template includes advanced context engineering capabilities:
 - **🎯 Context Convergence:** AI assistants maintain project awareness across sessions
 - **⚡ Command-Driven Workflow:** Structured commands for PRD → Tasks → Implementation
 - **🛡️ Plan Mode Integration:** Safe exploration and analysis with Claude Code CLI
+- **🔧 CLI Context Integration:** CLAUDE.md and GEMINI.md automatically load project context
+- **⚡ Zero-Setup CLI Assistance:** Claude Code and Gemini CLI get full project context on startup
 
 ## Support & Resources
 

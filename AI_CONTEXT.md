@@ -2,8 +2,11 @@
 
 ### **Purpose: This document serves as the evolving master briefing for any AI assistant working on this project. It accumulates context across the 5-step workflow and must be provided at the beginning of any new development session.**
 
-### CLI Context Files
-- This file can be used as a source for context files for claude code (claude.md) and gemini cli (gemini.md)
+### CLI Context Files Integration
+- **CLAUDE.md** and **GEMINI.md** automatically reference this file for complete project context
+- **Claude Code** automatically loads CLAUDE.md on startup
+- **Gemini CLI** automatically loads GEMINI.md into hierarchical memory
+- Both CLI assistants get the same comprehensive context through this centralized approach
 
 ---
 
@@ -157,6 +160,41 @@
 - **Lesson:** [What was learned]
 - **Context:** [Situation where it was learned]
 - **Application:** [How to apply this lesson in future development]
+
+---
+
+## 11. CLI Assistant Integration & Commands
+
+### **CLI Assistant Context Loading**
+- **Claude Code:** Automatically loads `CLAUDE.md` which references this file
+- **Gemini CLI:** Automatically loads `GEMINI.md` into hierarchical memory
+- **Both assistants:** Get complete project context through centralized AI_CONTEXT.md
+
+### **Project-Specific Validation Commands**
+```bash
+# Level 1 (Syntax & Style):
+# [your formatting command]     # e.g., black . or npm run prettier
+# [your linting command]        # e.g., flake8 . or npm run lint  
+# [your type checking command]  # e.g., mypy . or npm run type-check
+
+# Level 2 (Unit Tests):
+# [your test command]           # e.g., pytest tests/ or npm test
+# [your coverage command]       # e.g., pytest --cov=module
+
+# Level 3 (Integration):
+# [your integration command]    # e.g., npm run test:integration
+
+# Level 4 (Full Validation):
+# [your full test suite]       # e.g., pytest tests/ -v or npm run test:all
+```
+
+### **CLI Assistant Best Practices**
+- **Always read this complete AI_CONTEXT.md file first**
+- **Use validation commands after each change**
+- **Follow established patterns in existing codebase**
+- **Ask for clarification if context is unclear**
+- **Claude Code:** Use Plan Mode (Shift+Tab twice) for complex analysis
+- **Gemini CLI:** Use `/memory show` to verify loaded context
 
 ---
 

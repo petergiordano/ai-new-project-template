@@ -24,6 +24,8 @@ ls -la
 # - .project-docs/       (copied from template) 
 # - src/                 (your source code directory)
 # - AI_CONTEXT.md        (template - will be populated)
+# - CLAUDE.md            (Claude Code CLI context file)
+# - GEMINI.md            (Gemini CLI context file)
 # - WORKFLOW_GUIDE.md    (this file)
 # - README.md            (customize for your project)
 ```
@@ -90,6 +92,77 @@ Plan Mode is Claude Code's read-only analysis mode that prevents accidental file
 2. **Use Thinking Modes:** Use "think", "think hard", "think harder", or "ultrathink" to trigger extended thinking mode for better analysis
 3. **Exit to Execute:** Remember to exit Plan Mode (Shift+Tab) before actual implementation
 4. **Strategic Usage:** Use Plan Mode for complex tasks, skip for simple repetitive patterns
+
+---
+
+## 🔧 CLI Assistant Context Integration
+
+*This section explains how Claude Code and Gemini CLI automatically receive project context.*
+
+### **Automatic Context Loading**
+
+**Your workspace includes context files that automatically brief CLI assistants:**
+
+- **`CLAUDE.md`**: Claude Code automatically loads this file on startup
+- **`GEMINI.md`**: Gemini CLI automatically loads this into hierarchical memory
+- **Both files reference `AI_CONTEXT.md`** for complete project context
+
+### **How It Works**
+
+**When you start Claude Code CLI:**
+```bash
+claude  # Automatically loads CLAUDE.md → AI_CONTEXT.md context
+```
+
+**When you start Gemini CLI:**
+```bash
+gemini  # Automatically loads GEMINI.md into memory system
+```
+
+**Context Loading Verification:**
+- **Claude Code**: Use Plan Mode to verify context understanding
+- **Gemini CLI**: Use `/memory show` to view loaded context files
+
+### **Benefits of This Approach**
+
+✅ **Zero Setup Required**: CLI assistants get project context immediately  
+✅ **Consistent Context**: All AI assistants work from the same project knowledge  
+✅ **Automatic Updates**: Context evolves as your project grows  
+✅ **Pattern Recognition**: CLI assistants understand your project conventions immediately  
+
+### **Context Validation**
+
+**Before starting work with CLI assistants:**
+
+**Claude Code Validation:**
+```
+1. Start claude in your project directory
+2. Enter Plan Mode (Shift+Tab twice)
+3. Ask: "What do you understand about this project from the context?"
+4. Verify it references AI_CONTEXT.md content correctly
+5. Exit Plan Mode (Shift+Tab) when ready to implement
+```
+
+**Gemini CLI Validation:**
+```
+1. Start gemini in your project directory  
+2. Run: /memory show
+3. Verify GEMINI.md content is loaded
+4. Ask: "What do you understand about this project?"
+5. Confirm it references AI_CONTEXT.md content correctly
+```
+
+### **Troubleshooting Context Loading**
+
+**Common Issues:**
+- **"CLI doesn't seem to understand my project"** → Verify you're in the correct directory with CLAUDE.md/GEMINI.md files
+- **"Context seems outdated"** → Update AI_CONTEXT.md, then restart CLI assistant
+- **"CLI ignoring project patterns"** → Use context validation steps above to verify loading
+
+**Context Update Protocol:**
+1. **Update AI_CONTEXT.md** with new patterns or decisions
+2. **Restart CLI assistant** to load updated context
+3. **Verify loading** using validation steps above
 
 ---
 
