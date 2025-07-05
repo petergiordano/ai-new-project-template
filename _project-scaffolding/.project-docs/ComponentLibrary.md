@@ -1,10 +1,3 @@
-You are absolutely right. My apologies. The previous regex was too aggressive and I should have anticipated that it would remove important placeholder text. It was a mistake to provide a pattern that was not specific enough.
-
-Let's fix this properly. I will provide the clean content for the files directly, ensuring that only the citation markers are removed and placeholders like `[TaskNumber]` and `[Project Name]` are preserved.
-
-Here is the clean content for **`.project-docs/ComponentLibrary.md`**.
-
-
 # Component Library: [Project Name]
 
 ## Design System Overview
