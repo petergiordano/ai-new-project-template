@@ -42,40 +42,198 @@ When using Claude Code CLI for this process, leverage Plan Mode for enhanced ana
 - **Better Architecture Alignment:** Ensure tasks align with existing project patterns and conventions
 - **Reduced Iterations:** More thorough upfront analysis leads to better initial task breakdowns
 
+
 ## Output Format
 
-The generated task list _must_ follow this structure:
+The generated task list _must_ follow this structure with integrated validation:
 
 ```markdown
 ## Relevant Files
 
-- `path/to/potential/file1.ts` - Brief description of why this file is relevant (e.g., Contains the main component for this feature).
-- `path/to/file1.test.ts` - Unit tests for `file1.ts`.
-- `path/to/another/file.tsx` - Brief description (e.g., API route handler for data submission).
-- `path/to/another/file.test.tsx` - Unit tests for `another/file.tsx`.
-- `lib/utils/helpers.ts` - Brief description (e.g., Utility functions needed for calculations).
-- `lib/utils/helpers.test.ts` - Unit tests for `helpers.ts`.
+- `path/to/potential/file1.ts` - Brief description of why this file is relevant
+- `path/to/file1.test.ts` - Unit tests for `file1.ts`
+- `path/to/another/file.tsx` - Brief description  
+- `path/to/another/file.test.tsx` - Unit tests for `another/file.tsx`
+
+### Validation Commands Reference
+```bash
+# Level 1 - Syntax & Style:
+[linting command]         # e.g., npm run lint
+[formatting command]      # e.g., prettier --check .
+[type checking command]   # e.g., npm run type-check
+
+# Level 2 - Unit Testing:
+[unit test command]       # e.g., npm test [module]
+[coverage command]        # e.g., npm run test:coverage
+
+# Level 3 - Integration:
+[integration command]     # e.g., npm run test:integration
+[api test command]        # e.g., curl -X POST localhost:3000/api/test
+
+# Level 4 - Feature Complete:
+[full test suite]         # e.g., npm test
+[health check]           # e.g., npm run health-check
+```
 
 ### Notes
 
 - Unit tests should typically be placed alongside the code files they are testing (e.g., `MyComponent.tsx` and `MyComponent.test.tsx` in the same directory).
 - Use `npx jest [optional/path/to/test/file]` to run tests. Running without a path executes all tests found by the Jest configuration.
 
-## Tasks
+## Tasks with Integrated Validation
 
-- [ ] 1.0 Parent Task Title
-  - [ ] 1.1 [Sub-task description 1.1]
-  - [ ] 1.2 [Sub-task description 1.2]
-- [ ] 2.0 Parent Task Title
-  - [ ] 2.1 [Sub-task description 2.1]
-    - [ ] 2.1.1 [Sub-sub-task example]
-- [ ] 3.0 Security Task Parent Title
-  - [ ] 3.1 [Implement input validation for form X]
-  - [ ] 3.2 [Add authentication checks to API endpoint Y]
-  - [ ] 3.3 [Review data storage for sensitive information encryption]
-  - [ ] 3.4 [Write security-focused unit/integration tests for Z]
-- [ ] 4.0 Parent Task Title (may not require sub-tasks if purely structural or configuration)
-```
+- [ ] 1.0 **Setup & Foundation**
+  - [ ] 1.1 Create project structure and configuration files
+    **Validation:**
+    - ✅ Level 1: `[linting command]` passes
+    - ✅ Level 1: Project structure matches conventions
+    - ✅ Manual: Configuration files are valid
+    
+  - [ ] 1.2 Set up database schema and migrations
+    **Validation:**
+    - ✅ Level 1: `[schema validation command]` passes
+    - ✅ Level 2: `[migration test command]` passes
+    - ✅ Manual: Database setup works correctly
+
+- [ ] 2.0 **Core Functionality Implementation**
+  - [ ] 2.1 Implement main business logic module
+    **Validation:**
+    - ✅ Level 1: `[linting command]` passes
+    - ✅ Level 2: `[unit test command for module]` passes
+    - ✅ Level 2: Test coverage ≥ 80% for this module
+    - ✅ Manual: Business logic works as expected
+    
+  - [ ] 2.2 Add API endpoints for feature operations
+    **Validation:**
+    - ✅ Level 1: `[api linting command]` passes
+    - ✅ Level 2: `[api unit tests]` pass
+    - ✅ Level 3: `[api integration tests]` pass
+    - ✅ Manual: API endpoints respond correctly
+    
+  - [ ] 2.3 Implement data persistence layer
+    **Validation:**
+    - ✅ Level 1: `[data layer linting]` passes
+    - ✅ Level 2: `[data layer unit tests]` pass
+    - ✅ Level 3: `[database integration tests]` pass
+    - ✅ Manual: Data persists and retrieves correctly
+
+- [ ] 3.0 **User Interface & Experience**
+  - [ ] 3.1 Create main UI components
+    **Validation:**
+    - ✅ Level 1: `[ui linting command]` passes
+    - ✅ Level 2: `[component unit tests]` pass
+    - ✅ Level 3: `[component integration tests]` pass
+    - ✅ Manual: Components render and function correctly
+    
+  - [ ] 3.2 Implement user workflows and navigation
+    **Validation:**
+    - ✅ Level 1: `[workflow linting]` passes
+    - ✅ Level 3: `[end-to-end workflow tests]` pass
+    - ✅ Manual: User can complete intended workflows
+
+- [ ] 4.0 **Testing & Quality Assurance**
+  - [ ] 4.1 Create comprehensive test suite
+    **Validation:**
+    - ✅ Level 2: All test files have valid syntax
+    - ✅ Level 2: `[full test suite]` passes
+    - ✅ Level 2: Overall coverage ≥ 80%
+    - ✅ Manual: Tests cover happy path, edge cases, errors
+    
+  - [ ] 4.2 Add error handling and validation
+    **Validation:**
+    - ✅ Level 1: `[error handling linting]` passes
+    - ✅ Level 2: `[error handling tests]` pass
+    - ✅ Level 3: `[error scenario integration tests]` pass
+    - ✅ Manual: Errors are handled gracefully
+
+- [ ] 5.0 **Integration & Polish**
+  - [ ] 5.1 Integrate with existing system components
+    **Validation:**
+    - ✅ Level 3: `[system integration tests]` pass
+    - ✅ Level 4: `[full system test suite]` passes
+    - ✅ Manual: No regressions in existing features
+    
+  - [ ] 5.2 Performance optimization and final testing
+    **Validation:**
+    - ✅ Level 4: `[performance test suite]` passes
+    - ✅ Level 4: `[full validation suite]` passes
+    - ✅ Manual: Performance meets requirements
+    
+  - [ ] 5.3 Documentation and deployment preparation
+    **Validation:**
+    - ✅ Level 1: Documentation linting passes
+    - ✅ Manual: Documentation is complete and accurate
+    - ✅ Manual: Feature is ready for deployment
+
+## Final Feature Validation Checklist
+
+After completing all tasks, validate against original PRD:
+
+### PRD Success Criteria Validation
+- [ ] **Functional Requirements:** All requirements from PRD are implemented
+  - **Command:** `[feature validation command]`
+  - **Manual Check:** Each requirement can be demonstrated
+  
+- [ ] **User Stories:** All user stories can be completed successfully
+  - **Validation:** Step through each user story manually
+  - **Success:** User achieves intended outcome for each story
+  
+- [ ] **Performance Requirements:** Feature meets performance standards
+  - **Command:** `[performance validation command]`
+  - **Success:** Metrics meet or exceed PRD requirements
+
+### Technical Quality Validation
+- [ ] **Code Quality:** All code meets project standards
+  - **Command:** `[full linting and type checking]`
+  - **Success:** No linting errors, type checking passes
+  
+- [ ] **Test Coverage:** Comprehensive test coverage achieved
+  - **Command:** `[full coverage report]`
+  - **Success:** Coverage ≥ 80%, all critical paths tested
+  
+- [ ] **Integration:** Feature integrates cleanly with existing system
+  - **Command:** `[full integration test suite]`
+  - **Success:** All integration tests pass, no regressions
+
+### User Experience Validation
+- [ ] **Usability:** Feature is intuitive and user-friendly
+  - **Manual Test:** Complete each user workflow
+  - **Success:** Users can achieve goals without confusion
+  
+- [ ] **Error Handling:** Errors are handled gracefully
+  - **Manual Test:** Trigger error scenarios
+  - **Success:** Users receive helpful feedback for errors
+  
+- [ ] **Performance:** Feature performs within acceptable limits
+  - **Manual Test:** Use feature under normal load
+  - **Success:** Responsive performance, no blocking operations
+
+## Validation Integration Guidelines
+
+When generating task lists:
+
+1. **Each Sub-Task Must Include Validation Steps**
+   - Specify exact commands to run
+   - Define clear success criteria
+   - Include both automated and manual validation
+
+2. **Progressive Validation Levels**
+   - Level 1 validation for syntax and style
+   - Level 2 validation for unit testing
+   - Level 3 validation for integration
+   - Level 4 validation for feature completion
+
+3. **Clear Success Criteria**
+   - Executable commands with expected results
+   - Manual verification steps where needed
+   - Cross-reference to PRD requirements
+
+4. **Validation Command Specificity**
+   - Use actual project commands, not placeholders
+   - Include specific file paths where relevant
+   - Provide clear error identification guidance
+
+This validation integration ensures that every task includes clear, executable validation steps, enabling the systematic quality assurance approach throughout the development process.
 
 ## Interaction Model
 

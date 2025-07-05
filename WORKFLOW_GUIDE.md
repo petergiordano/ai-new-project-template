@@ -105,10 +105,55 @@ Instead of manually filling out the planning documents, use the AI-assisted init
 
 For any new feature, follow this process. **Important:** Always begin new AI sessions by providing your project-specific `AI_CONTEXT.md` to the AI assistant.
 
-#### **Step 2: Brief AI Assistants with Project Context**
-At the beginning of any new chat session, provide the AI with your project's specific context.
--   **Action:** Copy the entire contents of your populated **`AI_CONTEXT.md`** file and paste it as your first message to the AI.
+#### **Step 2: Brief AI Assistants with Dynamic Context (Context Convergence)**
 
+**Goal**: Ensure all AI assistants have current, accumulated project context for optimal collaboration.
+
+**Enhanced Context Loading Process**:
+
+1. **Context Validation Checkpoint:**
+   - **Action:** Copy the entire contents of your **dynamic** `AI_CONTEXT.md` file and paste it as your first message to any AI assistant
+   - **Validation:** AI assistant should respond: "Context loaded. Project: [NAME], Current stage: [STAGE], Active features: [LIST]. Ready to assist with [CURRENT_TASK]."
+   - **Confirm:** Verify the AI's understanding matches your current project state
+
+2. **Context Convergence Benefits:**
+   - **Accumulated Knowledge:** AI_CONTEXT.md now contains lessons learned from previous features
+   - **Architecture Awareness:** AI knows existing patterns and decisions made
+   - **Integration Intelligence:** AI understands how new features fit with existing code
+   - **Validation Continuity:** AI knows what validation approaches work for your project
+
+3. **Role-Specific Context Loading:**
+   
+   **For Chat AI (Strategist):**
+   ```
+   "I've loaded the project context. I understand:
+   - Project goals and current workflow stage
+   - Existing architecture and patterns
+   - Active features and their status
+   - My role as strategist for planning and prompt preparation
+   Ready to help with [current need: PRD creation, task planning, etc.]"
+   ```
+   
+   **For CLI AI (Implementer):**
+   ```
+   "Context loaded via AI_CONTEXT.md. Current state:
+   - Project: [name], Stage: [stage]
+   - Tech stack: [details]
+   - Active features: [list]
+   - Role: CLI implementer for code execution
+   Ready for specific implementation tasks."
+   ```
+
+4. **Context Handoff Protocol:**
+   - **Between Sessions:** Always start with fresh AI_CONTEXT.md loading
+   - **Between AI Types:** Chat AI prepares context-rich prompts for CLI AI
+   - **Progress Updates:** Update AI_CONTEXT.md as features move through workflow stages
+
+**Critical Success Factors:**
+- ✅ AI demonstrates understanding of current project state
+- ✅ AI references existing patterns and architecture decisions
+- ✅ AI knows which features are active and their current status
+- ✅ AI follows established validation and testing approaches
 #### **Step 3: Create the Product Requirements Document (PRD)**
 
 -   **Goal**: To define the feature requirements clearly enough for a junior developer to understand.

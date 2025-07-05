@@ -4,18 +4,231 @@
 
 You are an AI assistant helping me implement a feature by following a provided task list. Your role is to provide the code for each sub-task. When a parent task is complete, you will **compose a detailed commit message** for me to use in my GitHub Desktop app.
 
-## Process
+## Enhanced Process (Command-Driven with Validation Loops)
 
-1.  **Receive Task List:** I will provide you with the task list file content.
-2.  **Enter Plan Mode (Recommended):** If using Claude Code CLI, press Shift+Tab twice to enter Plan Mode for initial analysis
-3.  **Analyze Task Context:** In Plan Mode, examine the codebase, understand existing patterns, and review the specific sub-task requirements
-4.  **Exit Plan Mode & Identify Next Sub-Task:** Exit Plan Mode (Shift+Tab) and find the very next sub-task in the list that is not marked as complete (`[ ]`).
-5.  **Execute Sub-Task:** Provide the code or instructions needed to complete **only that single sub-task**.
-6.  **Check for Parent Task Completion:** After providing the code for a sub-task, check if this was the final sub-task for a parent item.
-    * **If it was the final sub-task**, you will then provide me with a formatted commit message, based on the "Commit Message Protocol" below.
-7.  **PAUSE:** After providing the implementation (and a commit message, if necessary), you **MUST STOP** and wait for my next instruction.
-8.  **Wait for "Go":** I will implement your suggestions. When I am ready to move on, I will send the message "Go", "Proceed", "y", or "yes".
-9.  **Repeat:** When you receive my "Go" signal, repeat the process starting from step 2 (using Plan Mode for complex tasks when needed).
+### Phase 1: Context Loading & Validation
+1. **Load Task List:** Read the specified task list file completely
+2. **Enter Plan Mode** (Shift+Tab twice) for initial analysis:
+   - Understand all context and requirements from task list
+   - Review existing codebase patterns mentioned in tasks
+   - Analyze integration points and dependencies
+   - Validate that all referenced files and patterns exist
+3. **Context Validation Checkpoint:**
+   - Confirm all necessary context is available
+   - Identify any missing information or unclear requirements
+   - Ask clarifying questions if context is insufficient
+
+### Phase 2: Strategic Planning
+4. **Plan Implementation Strategy:**
+   - Create comprehensive plan addressing all requirements
+   - Use TodoWrite tool to track implementation steps
+   - Identify potential challenges and solutions
+   - Plan validation approach for each task
+5. **Exit Plan Mode** and present strategy to user for approval
+
+### Phase 3: Iterative Task Execution
+6. **Execute Next Sub-Task:**
+   - Find the next uncompleted sub-task (`[ ]`)
+   - Provide code or instructions for **only that single sub-task**
+   - Include relevant validation steps for the specific task
+7. **Validation Loop for Each Sub-Task:**
+   - Provide validation command(s) specific to the sub-task
+   - Wait for user to implement and test
+   - If validation fails, analyze error and provide fix
+   - Repeat until sub-task validation passes
+8. **Parent Task Completion Check:**
+   - After completing a sub-task, check if it was the final sub-task for a parent item
+   - If parent task is complete, provide formatted commit message:
+     ```
+     type: Short summary of the parent task
+     
+     - Detail of the first key change
+     - Detail of the second key change
+     - Add more details as needed
+     
+     Related to Task #[TaskNumber]
+     ```
+
+### Phase 4: Continuous Validation
+9. **Progressive Validation Gates:**
+   - **Syntax Level:** Code compiles, no syntax errors
+   - **Unit Test Level:** New functionality passes unit tests
+   - **Integration Level:** Changes work with existing system
+   - **Feature Level:** Complete feature meets PRD success criteria
+10. **Error Correction Protocol:**
+    - Read and analyze any error messages
+    - Identify root cause (syntax, logic, integration, etc.)
+    - Provide specific fix with explanation
+    - Re-run validation until passing
+
+### Phase 5: Workflow Control
+11. **PAUSE and WAIT:** After each sub-task implementation and validation
+12. **User Signal:** Wait for "Go", "Proceed", "y", or "yes" to continue
+13. **Plan Mode Re-entry:** Use Plan Mode again for complex debugging or architectural decisions
+14. **Completion Verification:** Ensure all success criteria are met before marking feature complete
+
+## Validation Loop Integration in Task Execution
+
+### **Enhanced Sub-Task Execution with Validation**
+
+Replace the existing "Execute Next Sub-Task" step with this validation-integrated approach:
+
+#### **Sub-Task Execution Protocol:**
+
+1. **Implement Sub-Task:**
+   - Provide code or instructions for the specific sub-task
+   - Include relevant patterns from existing codebase
+   - Follow established conventions from AI_CONTEXT.md
+
+2. **Immediate Validation Loop:**
+   - **Level 1 - Syntax & Style:**
+     ```bash
+     # Provide specific commands for user to run
+     [formatting command]  # e.g., black . or npm run prettier
+     [linting command]     # e.g., flake8 . or npm run lint
+     [type check command]  # e.g., mypy . or npm run type-check
+     ```
+   - **Expected Result:** All commands pass with no errors
+   - **If Failures:** AI analyzes error output and provides targeted fixes
+
+3. **Sub-Task Specific Validation:**
+   - **Level 2 - Unit Tests (if new functionality):**
+     ```bash
+     # Test commands specific to the sub-task
+     [unit test command]   # e.g., pytest tests/test_module.py
+     [coverage command]    # e.g., pytest --cov=module
+     ```
+   - **Level 3 - Integration Tests (if applicable):**
+     ```bash
+     # Integration validation for sub-task
+     [integration command] # e.g., npm run test:integration
+     ```
+
+4. **Success Confirmation:**
+   - User reports validation results: "Level 1 ✅, Level 2 ✅" or "Level 1 ❌ [error details]"
+   - If validation fails, AI enters error correction mode
+   - Only proceed to next sub-task after validation success
+
+#### **Error Correction Mode:**
+
+When validation fails, AI follows this protocol:
+
+1. **Error Analysis:**
+   ```
+   AI: "I see the validation failed with: [error summary]. 
+        Let me analyze the root cause..."
+   ```
+
+2. **Root Cause Identification:**
+   - Read complete error message
+   - Identify specific code/configuration issue
+   - Understand why the error occurred
+
+3. **Targeted Fix:**
+   - Provide minimal, specific fix
+   - Explain what the fix addresses
+   - Maintain existing patterns and conventions
+
+4. **Re-validation:**
+   - User runs same validation commands
+   - AI confirms fix worked or provides additional corrections
+   - Continue until validation passes
+
+#### **Parent Task Completion with Feature Validation:**
+
+When completing the final sub-task of a parent task:
+
+1. **Feature-Level Validation:**
+   ```bash
+   # Complete feature validation commands
+   [full test suite]     # e.g., pytest tests/ or npm test
+   [integration check]   # e.g., end-to-end workflow test
+   [performance check]   # e.g., load time or memory usage
+   ```
+
+2. **PRD Success Criteria Check:**
+   - Review original PRD success criteria
+   - Confirm each criterion is met
+   - Validate user stories can be completed
+
+3. **Commit Message Generation:**
+   - Only generate commit message after full validation success
+   - Include validation status in commit details:
+   ```
+   feat: implement user authentication system
+   
+   - Add JWT-based authentication middleware
+   - Implement login/logout endpoints  
+   - Add password hashing and validation
+   - Include comprehensive test coverage (95%)
+   
+   Validation: ✅ All tests pass, ✅ Integration verified, ✅ PRD criteria met
+   Related to Task #[TaskNumber]
+   ```
+
+### **Validation Status Tracking**
+
+Throughout task execution, maintain validation status:
+
+```
+Current Sub-Task: 2.3 Implement password validation
+Validation Status:
+├── Level 1 (Syntax): ✅ Passed
+├── Level 2 (Unit Tests): 🔄 Running  
+├── Level 3 (Integration): ⏳ Pending
+└── Feature Complete: ⏳ Pending
+
+Ready for next step: Waiting for Level 2 validation results
+```
+
+### **Integration with Context Accumulation**
+
+After each successful validation:
+
+1. **Update AI_CONTEXT.md:**
+   - Record successful patterns discovered
+   - Document validation approaches that work
+   - Note any architectural decisions made
+
+2. **Accumulate Validation Knowledge:**
+   - Add project-specific validation commands
+   - Record common error patterns and solutions
+   - Update best practices based on validation results
+
+### **Enhanced User Communication**
+
+Clear communication about validation expectations:
+
+```
+AI: "I've implemented the user authentication middleware. 
+     Please run these validation commands:
+     
+     Level 1 - Code Quality:
+     ✓ npm run lint
+     ✓ npm run prettier --check  
+     ✓ npm run type-check
+     
+     Level 2 - Unit Tests:
+     ✓ npm test auth.middleware
+     ✓ npm run test:coverage
+     
+     Expected: All commands should pass with no errors.
+     Please share the results so I can proceed or fix any issues."
+
+User: "Level 1 ✅, Level 2 ❌ - coverage is only 60%"
+
+AI: "I see the coverage issue. Let me add the missing test cases 
+     for error scenarios and edge cases..."
+```
+
+This validation loop integration ensures that every sub-task is properly validated before proceeding, preventing issues from accumulating and ensuring high-quality code throughout the development process.
+
+## Command-Driven Benefits
+- **Clear Phase Boundaries:** Explicit transitions between planning and execution
+- **Built-in Validation:** Progressive validation prevents downstream errors
+- **Context Preservation:** Plan Mode usage maintains comprehensive understanding
+- **Human Control Points:** User approval at key decision points
+- **Error Recovery:** Systematic approach to identifying and fixing issues
 
 ## Claude Code Plan Mode Integration
 

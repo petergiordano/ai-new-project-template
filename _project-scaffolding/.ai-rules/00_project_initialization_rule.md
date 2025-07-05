@@ -115,10 +115,11 @@ Ask these questions to establish the technical conventions and AI briefing conte
 After completing all five phases, generate the populated documents using this approach:
 
 ### **For Each Document:**
-1. **Use the original template structure** from the `.project-docs/` files
+1. **Use the original template structure** from the `.project-docs/` files and `AI_CONTEXT.md` template
 2. **Replace all placeholder text** with user's specific answers
 3. **Maintain the formatting and sections** of the original templates
 4. **Add rich detail** beyond just the direct answers - interpret and expand thoughtfully
+5. **For AI_CONTEXT.md specifically:** Populate the Plan Mode best practices with project-specific guidance based on the tech stack, complexity, and requirements gathered during the interview
 
 ### **Output Format:**
 Present each completed document clearly:
@@ -162,6 +163,7 @@ Before presenting the final documents:
 2. **Consistency Check:** Verify that details across documents align and support each other
 3. **Specificity Check:** Confirm that vague placeholders have been replaced with concrete, actionable content
 4. **User Voice Check:** Ensure the content reflects the user's actual vision, not generic startup language
+5. **Plan Mode Integration Check:** Verify that AI_CONTEXT.md includes project-specific Plan Mode guidance that reflects the actual tech stack, complexity level, and critical areas identified during the interview
 
 ## Refinement Process
 
