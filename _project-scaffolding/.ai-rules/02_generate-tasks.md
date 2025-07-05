@@ -13,19 +13,40 @@ To guide an AI assistant in creating a detailed, step-by-step task list in Markd
 ## Process
 
 1.  **Receive PRD Reference:** The user points the AI to a specific PRD file
-2.  **Analyze PRD:** The AI reads and analyzes the functional requirements, user stories, and other sections of the specified PRD.
-3.  **Phase 1: Generate Parent Tasks:** Based on the PRD analysis, create the file and generate the main, high-level tasks required to implement the feature. Use your judgement on how many high-level tasks to use. It's likely to be about 5. Present these tasks to the user in the specified format (without sub-tasks yet). Inform the user: "I have generated the high-level tasks based on the PRD. Ready to generate the sub-tasks? Respond with 'Go' to proceed."
-4.  **Wait for Confirmation:** Pause and wait for the user to respond with "Go".
-5.  **Phase 2: Generate Sub-Tasks:** Once the user confirms, break down each parent task into smaller, actionable sub-tasks necessary to complete the parent task. Ensure sub-tasks logically follow from the parent task and cover the implementation details implied by the PRD.
-6.  **Identify Relevant Files:** Based on the tasks and PRD, identify potential files that will need to be created or modified. List these under the `Relevant Files` section, including corresponding test files if applicable.
-7.  **Generate Final Output:** Combine the parent tasks, sub-tasks, relevant files, and notes into the final Markdown structure.
-8.  **Save Task List:** Save the generated document in the `/tasks/` directory with the filename `tasks-[prd-file-name].md`, where `[prd-file-name]` matches the base name of the input PRD file (e.g., if the input was `prd-user-profile-editing.md`, the output is `tasks-prd-user-profile-editing.md`).
+2.  **Enter Plan Mode:** If using Claude Code CLI, press Shift+Tab twice to enter Plan Mode for safe analysis
+3.  **Analyze PRD:** The AI reads and analyzes the functional requirements, user stories, and other sections of the specified PRD. In Plan Mode, this analysis happens without risk of accidental file modifications.
+4.  **Phase 1: Generate Parent Tasks:** Based on the PRD analysis, create the file and generate the main, high-level tasks required to implement the feature. Use your judgement on how many high-level tasks to use. It's likely to be about 5. Present these tasks to the user in the specified format (without sub-tasks yet). Inform the user: "I have generated the high-level tasks based on the PRD. Ready to generate the sub-tasks? Respond with 'Go' to proceed."
+5.  **Wait for Confirmation:** Pause and wait for the user to respond with "Go".
+6.  **Exit Plan Mode (if applicable):** If using Claude Code CLI Plan Mode, exit Plan Mode (Shift+Tab) to enable file creation
+7.  **Phase 2: Generate Sub-Tasks:** Once the user confirms, break down each parent task into smaller, actionable sub-tasks necessary to complete the parent task. Ensure sub-tasks logically follow from the parent task and cover the implementation details implied by the PRD.
+8.  **Identify Relevant Files:** Based on the tasks and PRD, identify potential files that will need to be created or modified. List these under the `Relevant Files` section, including corresponding test files if applicable.
+9.  **Generate Final Output:** Combine the parent tasks, sub-tasks, relevant files, and notes into the final Markdown structure.
+10. **Save Task List:** Save the generated document in the `/tasks/` directory with the filename `tasks-[prd-file-name].md`, where `[prd-file-name]` matches the base name of the input PRD file (e.g., if the input was `prd-user-profile-editing.md`, the output is `tasks-prd-user-profile-editing.md`).
+
+## Claude Code Plan Mode Integration
+
+When using Claude Code CLI for this process, leverage Plan Mode for enhanced analysis:
+
+### **Recommended Plan Mode Workflow:**
+1. **Enter Plan Mode:** Press Shift+Tab twice
+2. **Analyze Context:** Read the PRD file and any related project files
+3. **Research Dependencies:** Examine existing codebase structure and patterns
+4. **Create Mental Model:** Understand how the new feature fits into the existing architecture
+5. **Generate High-Level Plan:** Create the parent tasks structure
+6. **Present for Approval:** Show the high-level breakdown to the user
+7. **Exit Plan Mode:** After user confirms, exit Plan Mode to create the actual task file
+
+### **Benefits of Using Plan Mode:**
+- **Safe Analysis:** Explore the codebase and PRD without accidental modifications
+- **Comprehensive Understanding:** Take time to fully understand the requirements before committing to a task structure
+- **Better Architecture Alignment:** Ensure tasks align with existing project patterns and conventions
+- **Reduced Iterations:** More thorough upfront analysis leads to better initial task breakdowns
 
 ## Output Format
 
 The generated task list _must_ follow this structure:
 
-markdown
+```markdown
 ## Relevant Files
 
 - `path/to/potential/file1.ts` - Brief description of why this file is relevant (e.g., Contains the main component for this feature).
@@ -54,7 +75,7 @@ markdown
   - [ ] 3.3 [Review data storage for sensitive information encryption]
   - [ ] 3.4 [Write security-focused unit/integration tests for Z]
 - [ ] 4.0 Parent Task Title (may not require sub-tasks if purely structural or configuration)
-
+```
 
 ## Interaction Model
 

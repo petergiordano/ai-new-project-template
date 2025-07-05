@@ -6,6 +6,52 @@ This document explains the guiding philosophies, the roles of each participant, 
 
 ---
 
+## Using Plan Mode Effectively
+
+*This section applies when using Claude Code CLI and leverages its built-in Plan Mode feature.*
+
+### **What is Plan Mode?**
+
+Plan Mode is Claude Code's read-only analysis mode that prevents accidental file modifications while allowing comprehensive codebase exploration and planning. Access it by pressing Shift+Tab twice, and it creates a safe environment where Claude can research, analyze, and plan without making any changes to your files.
+
+### **Plan Mode Benefits for This Workflow**
+
+- **Safe Exploration:** Analyze existing code without risk of accidental changes
+- **Better Planning:** Ask Claude to make a plan before coding and explicitly tell it not to code until you've confirmed its plan looks good
+- **Architectural Alignment:** Understand existing patterns before implementing new features
+- **Reduced Iterations:** More thoughtful analysis leads to better initial implementations
+
+### **Plan Mode Integration Points**
+
+**Step 1 - Project Initialization:**
+- Use Plan Mode to safely explore any existing project structure
+- Analyze current dependencies and configuration files
+- Better informed questions based on discovered project context
+
+**Step 3 - PRD Creation:**
+- Enter Plan Mode to understand how the new feature fits into existing architecture
+- Research similar implementations in the codebase
+- Plan integration points before defining requirements
+
+**Step 4 - Task Generation:**
+- Use Plan Mode to thoroughly analyze the PRD and existing codebase
+- Understand dependencies and architectural constraints
+- Create more accurate task breakdowns
+
+**Step 5 - Task Execution:**
+- Enter Plan Mode before complex parent tasks
+- Use for debugging when implementations don't work as expected
+- Plan integration strategies for multi-file changes
+
+### **Plan Mode Best Practices**
+
+1. **Always Plan First:** Use Plan Mode for initial analysis - the 2 minutes spent planning saves 20 minutes of refactoring later
+2. **Use Thinking Modes:** Use "think", "think hard", "think harder", or "ultrathink" to trigger extended thinking mode for better analysis
+3. **Exit to Execute:** Remember to exit Plan Mode (Shift+Tab) before actual implementation
+4. **Strategic Usage:** Use Plan Mode for complex tasks, skip for simple repetitive patterns
+
+---
+
 ## Guiding Philosophy
 
 This template is built upon two key concepts that ensure high-quality, consistent results from AI assistants.
@@ -22,7 +68,7 @@ This workflow splits responsibilities between you and two types of AI assistants
 #### 1. The User (You) - The Project Director
 You are the ultimate authority. You drive the process, make final decisions, and are responsible for testing and validation.
 
-#### 2. The Chat Assistant (e.g., Gemini, Claude) - The Strategist
+#### 2. The Chat Assistant (e.g., ChatGPT, Gemini, Claude) - The Strategist
 This AI runs in a web browser. Its role is high-level thinking, planning, and preparing prompts. It does **not** write the final code.
 
 #### 3. The CLI Assistant (e.g., Gemini CLI, Claude Code) - The Implementer
@@ -36,48 +82,76 @@ This AI runs in your VS Code terminal. It has access to your files and its only 
 
 Before starting any coding, it's crucial to establish the project's foundation.
 
-1.  **Fill out the Project Context Documents:**
-    In the `.project-docs/` directory, fill out the following templates. They provide essential context for both you and the AI assistant.
-    -   **`Roadmap.md`**: The high-level vision and plan for the entire project.
-    -   **`ComponentLibrary.md`**: The design system and UI components.
-    -   **`VibeTesting.md`**: Defines the emotional journey and target "vibe."
-    -   **`SLC_Session_Notes.md`**: Use this to plan a feature sprint.
+#### **Step 1: Generate Project Context Documents**
+Instead of manually filling out the planning documents, use the AI-assisted initialization process to create your project foundation.
 
-2.  **Brief the AI Assistants (Step 0):**
-    This is the most critical step. At the beginning of any new chat session, you must first provide the AI with the project's master context.
-    -   **Action:** Copy the entire contents of the **`AI_CONTEXT.md`** file and paste it as your first message to the AI.
+1.  **You to Chat Assistant:** "Help me initialize a new project using the template."
+2.  **Chat Assistant to You:** Provides the initialization prompt based on `.ai-rules/00_project-initialization.md`.
+3.  **You to CLI Assistant:** Paste the initialization prompt into the terminal.
+4.  **CLI Assistant:** **Enters Plan Mode (Shift+Tab twice)** to safely explore any existing project structure and dependencies
+5.  **CLI Assistant to You:** Conducts a structured interview through five phases:
+    -   **Phase A:** Project Vision & Strategy (→ `Roadmap.md`)
+    -   **Phase B:** User Experience & Emotional Design (→ `VibeTesting.md`)
+    -   **Phase C:** Design System & Visual Identity (→ `ComponentLibrary.md`)
+    -   **Phase D:** First Sprint Planning (→ `SLC_Session_Notes.md`)
+    -   **Phase E:** Technical Foundation & AI Context (→ `AI_CONTEXT.md`)
+6.  **You:** Answer the questions thoughtfully - these become your project's foundation.
+7.  **CLI Assistant:** **Exits Plan Mode** and generates all five populated documents with project-specific Plan Mode guidance.
+8.  **You:** Save the generated documents in your project (`.project-docs/` for the first four, root directory for `AI_CONTEXT.md`).
 
-### **Phase 2: Feature Implementation (The 3 Steps)**
+**Alternative Option:** If you prefer to fill out the context documents manually, you can skip Step 1 and complete the templates yourself, but you'll need to manually create your project-specific `AI_CONTEXT.md`.
 
-For any new feature, follow this process.
+### **Phase 2: Feature Implementation**
 
-#### **Step 1: Create the Product Requirements Document (PRD)**
+For any new feature, follow this process. **Important:** Always begin new AI sessions by providing your project-specific `AI_CONTEXT.md` to the AI assistant.
+
+#### **Step 2: Brief AI Assistants with Project Context**
+At the beginning of any new chat session, provide the AI with your project's specific context.
+-   **Action:** Copy the entire contents of your populated **`AI_CONTEXT.md`** file and paste it as your first message to the AI.
+
+#### **Step 3: Create the Product Requirements Document (PRD)**
 
 -   **Goal**: To define the feature requirements clearly enough for a junior developer to understand.
 -   **Process**:
     1.  **You to Chat Assistant:** "I need to build [feature]. Help me think through the requirements."
     2.  **Chat Assistant to You:** Helps you brainstorm and prepares a detailed prompt for the CLI Assistant, using the rules from `.ai-rules/01_create-prd.md`.
-    3.  **You to CLI Assistant:** Paste the prepared prompt into the terminal. The CLI assistant will ask clarifying questions.
-    4.  **You:** Answer the questions. The CLI Assistant will then generate the final PRD.
-    5.  **You:** Save the PRD in a new `tasks/` directory (e.g., `tasks/prd-feature-name.md`).
+    3.  **You to CLI Assistant:** Paste the prepared prompt into the terminal. 
+    4.  **CLI Assistant:** **Enters Plan Mode** to understand how the feature fits into existing architecture and research similar implementations
+    5.  **CLI Assistant:** **Exits Plan Mode** and asks clarifying questions about the feature requirements
+    6.  **You:** Answer the questions. The CLI Assistant will then generate the final PRD.
+    7.  **You:** Save the PRD in a new `tasks/` directory (e.g., `tasks/prd-feature-name.md`).
 
-#### **Step 2: Generate the Task List**
+#### **Step 4: Generate the Task List**
 
 -   **Goal**: To break down the PRD into a detailed, step-by-step checklist.
 -   **Process**:
     1.  **You to Chat Assistant:** "Here is the PRD we just created. Prepare the prompt to turn this into a task list."
     2.  **Chat Assistant to You:** Provides a prompt containing the rules from `.ai-rules/02_generate-tasks.md` and the PRD content.
     3.  **You to CLI Assistant:** Paste the prepared prompt into the terminal.
-    4.  **CLI Assistant to You:** Generates a hierarchical task list.
-    5.  **You:** Review the task list and save it (e.g., `tasks/tasks-feature-name.md`).
+    4.  **CLI Assistant:** **Enters Plan Mode** to thoroughly analyze the PRD and examine existing codebase patterns
+    5.  **CLI Assistant:** **Exits Plan Mode** and generates a hierarchical task list based on the analysis
+    6.  **You:** Review the task list and save it (e.g., `tasks/tasks-feature-name.md`).
 
-#### **Step 3: Execute the Task List**
+#### **Step 5: Execute the Task List**
 
 -   **Goal**: To implement the feature by completing one sub-task at a time, reviewing and testing at each step.
 -   **Process**:
     1.  **You to CLI Assistant:** Paste the rules from `.ai-rules/03_execute-tasks.md` into the terminal, followed by the content of your task list file.
-    2.  **CLI Assistant to You:** Provides the code for the **first sub-task** and then **PAUSES**.
-    3.  **You:** Implement and test the AI's suggestion in VS Code.
-    4.  **You:** If the code works, mark the task as complete (`[x]`) in your task file.
-    5.  **You to CLI Assistant:** Type **"Go"** to proceed to the next sub-task.
-    6.  **Loop:** Repeat steps 2-5 until all tasks are complete.
+    2.  **CLI Assistant:** **Uses Plan Mode strategically** - enters Plan Mode for complex parent tasks to analyze context and plan implementation approach
+    3.  **CLI Assistant to You:** Provides the code for the **first sub-task** and then **PAUSES**.
+    4.  **You:** Implement and test the AI's suggestion in VS Code.
+    5.  **You:** If the code works, mark the task as complete (`[x]`) in your task file.
+    6.  **You to CLI Assistant:** Type **"Go"** to proceed to the next sub-task.
+    7.  **Loop:** Repeat steps 2-6 until all tasks are complete. The CLI Assistant will use Plan Mode again for complex tasks, debugging, or when issues arise.
+
+---
+
+## Summary: Complete Workflow
+
+1. **Step 1:** Generate project context documents (includes creating project-specific `AI_CONTEXT.md`)
+2. **Step 2:** Brief AI with your populated `AI_CONTEXT.md` (at start of each new session)
+3. **Step 3:** Create PRD for your feature
+4. **Step 4:** Generate task list from PRD
+5. **Step 5:** Execute tasks one by one
+
+This systematic approach ensures that both you and the AI have comprehensive context at every stage, leading to more consistent, higher-quality results.
