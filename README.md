@@ -28,6 +28,11 @@ This repository is a template for starting new software projects using a structu
    ```bash
    code .
    ```
+4. **Save workspace for your project:**
+   - In VS Code: File → Save Workspace As...
+   - Name it: `your-project-name.code-workspace` (e.g., `test2.code-workspace`)
+   - Save it in your project root directory
+   - When prompted, choose "Open Workspace"
 
 ### **Step 2: Essential Setup**
 
