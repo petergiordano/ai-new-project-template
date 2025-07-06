@@ -75,8 +75,8 @@ Execute these file operations in order:
    cp -r "_project-scaffolding/.project-docs" ".project-docs"
    echo "   ✅ Copied .project-docs/ (planning templates)"
    
-   cp -r "_project-scaffolding/.claude" ".claude"
-   echo "   ✅ Copied .claude/ (Claude Code commands)"
+   # Note: .claude/ is already at root level in template for immediate access
+   echo "   ✅ .claude/ (Claude Code commands already available)"
    
    # Create src directory if it doesn't exist
    mkdir -p "src"
@@ -106,16 +106,17 @@ Execute these file operations in order:
 3. **Commit the project setup:**
    ```bash
    echo "💾 Creating setup commit..."
-   git add README.md TODO.md .ai-rules/ .project-docs/ .claude/ src/
+   git add README.md TODO.md .ai-rules/ .project-docs/ src/
    git add -u  # Add removal of _project-scaffolding/
    git commit -m "feat: convert template to project workspace
 
-- Copy .ai-rules/, .project-docs/, .claude/ to root
+- Copy .ai-rules/, .project-docs/ to root
 - Transform README-project-template.md → README.md
 - Transform TODO-template.md → TODO.md
 - Create src/ directory for source code
 - Remove _project-scaffolding/ (contents copied)
 - Configure template remote for updates
+- .claude/ already available at root for immediate command access
 
 Template source: $(git remote get-url template)
 Setup date: $(date '+%Y-%m-%d %H:%M:%S')"
@@ -134,6 +135,7 @@ echo "   ✅ TODO.md (development task tracking)"
 echo "   ✅ AI_CONTEXT.md (ready for project context)"
 echo "   ✅ .ai-rules/ (workflow instructions)"
 echo "   ✅ .project-docs/ (planning templates)"
+echo "   ✅ .claude/ (Claude Code commands)"
 echo "   ✅ src/ (source code directory)"
 echo "   📋 setup-claude-chat-ai/ (Chat AI setup instructions)"
 echo "   🔗 Git remotes configured (origin + template)"

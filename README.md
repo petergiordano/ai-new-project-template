@@ -52,7 +52,7 @@ claude
 **What `/project-setup` does for you:**
 1. **Validates workspace safety** - Checks if setup was already completed to prevent double-execution
 2. **Configures git remotes** - Adds template remote pointing to `ai-new-project-template` for inheriting updates
-3. **Copies essential workflow files** - Moves `.ai-rules/`, `.project-docs/`, and `.claude/` from scaffolding to your project root
+3. **Copies essential workflow files** - Moves `.ai-rules/` and `.project-docs/` from scaffolding to your project root (`.claude/` already available for immediate use)
 4. **Creates project documentation** - Transforms template files into your project's `README.md` and `TODO.md`
 5. **Sets up source directory** - Creates `src/` folder for your application code
 6. **Cleans up scaffolding** - Removes `_project-scaffolding/` directory (contents now in proper locations)

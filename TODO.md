@@ -20,6 +20,17 @@
 
 **📝 COMMITTED TO GITHUB:** All enhancements successfully committed and pushed
 
+### ✅ CRITICAL FIX: Claude Command Accessibility - **COMPLETED**
+- **Problem Discovered:** `.claude/` commands in scaffolding created chicken-and-egg problem
+- **Root Cause:** Users need `/project-setup` to access commands, but commands weren't available until after setup
+- **Solution Implemented:** Moved `.claude/` from `_project-scaffolding/.claude/` to root level
+- **Files Updated:**
+  - **Moved:** `_project-scaffolding/.claude/` → `.claude/` (now immediately available)
+  - **Updated:** `.claude/commands/project-setup.md` (removed `.claude/` copy operation)
+  - **Updated:** `README.md` (corrected documentation about file copying)
+- **Result:** Users now have immediate access to `/project-setup` command upon template creation
+- **Testing Ready:** Template inheritance system fully functional
+
 ---
 
 ## REMAINING TASKS (Now Prioritized)
