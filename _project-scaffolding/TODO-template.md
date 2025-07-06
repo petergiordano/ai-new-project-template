@@ -1,77 +1,93 @@
-# Project TODO: [Project Name]
+# Project TODO: [Your Project Name]
+
+## 🚀 Getting Started
+
+**First time here?** Complete project setup:
+
+```bash
+# Run this once to set up your workspace
+/setup-project
+
+# Then start building features
+/start-coding
+```
+
+After setup, this file becomes your development task tracker.
+
+---
 
 ## Current Sprint / Development Focus
 
 ### 🎯 Active Tasks
-- [ ] [Current task 1]
-- [ ] [Current task 2] 
-- [ ] [Current task 3]
+- [ ] Complete project setup (`/setup-project`)
+- [ ] Define project foundation via `/start-coding`
+- [ ] [Additional tasks will appear during development]
 
 ### 📋 Next Up
-- [ ] [Upcoming task 1]
-- [ ] [Upcoming task 2]
-- [ ] [Upcoming task 3]
+- [ ] [Tasks will be populated during your workflow]
+- [ ] [AI will help generate specific tasks]
+- [ ] [Based on your project's needs]
 
 ---
 
 ## Feature Development Pipeline
 
 ### 🚀 Features in Progress
+*Features will appear here as you develop them through `/start-coding`*
+
 - **[Feature Name]** - [Brief description]
   - [ ] [Sub-task 1]
   - [ ] [Sub-task 2]
   - [ ] [Sub-task 3]
 
 ### 📝 Features Planned
+*Your feature roadmap will be built during the foundation interview*
+
 - **[Feature Name]** - [Brief description]
 - **[Feature Name]** - [Brief description]
 - **[Feature Name]** - [Brief description]
 
 ### ✅ Features Completed
-- **[Feature Name]** - [Brief description] *(Completed: [Date])*
-- **[Feature Name]** - [Brief description] *(Completed: [Date])*
+*Completed features will be tracked here*
+
+- **Project Setup** - Initial workspace configuration *(Completed: [Date])*
 
 ---
 
 ## Technical Debt & Improvements
 
 ### 🔧 Technical Tasks
-- [ ] [Technical improvement 1]
-- [ ] [Technical improvement 2]
-- [ ] [Code refactoring task]
-- [ ] [Performance optimization]
+- [ ] [Technical improvements will be identified during development]
+- [ ] [AI will suggest optimizations based on your code]
+- [ ] [Performance and quality improvements]
 
 ### 🐛 Known Issues
-- [ ] [Bug description 1]
-- [ ] [Bug description 2]
-- [ ] [Bug description 3]
+- [ ] [Issues will be tracked here as they're discovered]
+- [ ] [AI helps identify potential problems during development]
 
 ---
 
 ## Testing & Quality
 
 ### 🧪 Testing Tasks
-- [ ] [Test coverage improvement]
-- [ ] [Integration test addition]
-- [ ] [End-to-end test scenario]
+- [ ] [Testing strategy will be defined during foundation setup]
+- [ ] [AI helps generate appropriate test coverage]
+- [ ] [Quality gates are built into the workflow]
 
 ### 📊 Quality Metrics
-- [ ] [Quality goal 1]
-- [ ] [Quality goal 2]
-- [ ] [Performance benchmark]
+- [ ] [Quality goals will be defined based on your project type]
+- [ ] [Metrics appropriate to your tech stack and goals]
 
 ---
 
 ## Documentation & Communication
 
 ### 📚 Documentation Tasks
-- [ ] [Documentation update 1]
-- [ ] [API documentation]
-- [ ] [User guide improvement]
+- [ ] [Documentation needs will be identified during development]
+- [ ] [AI helps maintain up-to-date documentation]
 
 ### 💬 Communication
-- [ ] [Team update or demo]
-- [ ] [Stakeholder communication]
+- [ ] [Stakeholder updates and demos as needed]
 - [ ] [User feedback incorporation]
 
 ---
@@ -79,19 +95,19 @@
 ## Notes & Ideas
 
 ### 💡 Ideas to Explore
+*Ideas will accumulate here during development*
 - [Idea 1]
 - [Idea 2] 
 - [Idea 3]
 
 ### 📝 Meeting Notes
 - **[Date]:** [Meeting notes or decisions]
-- **[Date]:** [Meeting notes or decisions]
 
 ### 🎯 Goals & Success Metrics
+*Will be defined during your foundation interview*
 - [Goal 1]: [Success metric]
 - [Goal 2]: [Success metric]
-- [Goal 3]: [Success metric]
 
 ---
 
-**Framework Note:** This project uses the AI-Assisted Development Framework. For workflow guidance, see `WORKFLOW_GUIDE.md` and the `.ai-rules/` directory for AI collaboration patterns.
+**Framework Note:** This project uses the AI-Assisted Development Framework. Run `/orient` anytime to check your current state and get guidance on next steps.

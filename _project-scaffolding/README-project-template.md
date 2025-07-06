@@ -1,12 +1,53 @@
-# [Project Name]
+# [Your Project Name]
 
 **[Brief one-sentence description of what your project does]**
 
-## 🚀 Development Workflow
+## 🚀 Quick Start - Setup Required
+
+**Welcome to your new project!** Complete setup in 30 seconds:
+
+### **Essential Setup (One-Time)**
+
+Open terminal in VS Code and run:
+
+```bash
+# Start Claude Code CLI
+claude
+
+# Set up your project workspace (one-time only)
+/setup-project
+```
+
+**What this does:**
+- Cleans up template files → creates your project structure
+- Sets up AI-assisted development workflow
+- Creates foundation documents for your project
+
+### **After Setup - Start Building**
+
+```bash
+# Begin feature development 
+/start-coding
+```
+
+---
+
+## 🎯 Your Development Journey
+
+```
+1. 🔄 /setup-project (complete workspace setup) ← START HERE
+2. 🔄 /start-coding (foundation → PRD → tasks → implementation)
+3. 🔄 /start-coding (next feature: PRD → tasks → implementation)
+4. 🧭 /orient (navigation and state checking)
+```
+
+---
+
+## Development Workflow (After Setup)
 
 This project uses the AI-Assisted Development Framework for efficient feature development.
 
-### **Quick Start Commands**
+### **Commands You'll Use:**
 
 ```bash
 # Check current project state and get guidance
@@ -14,32 +55,22 @@ This project uses the AI-Assisted Development Framework for efficient feature de
 
 # Develop new features (foundation → PRD → tasks → implementation)
 /start-coding
-
-# Set up workspace (already completed during project setup)
-# /setup-project
 ```
 
-### **Development Journey**
-```
-1. ✅ Project setup complete (/setup-project)
-2. 🔄 Feature development (/start-coding)
-3. 🔄 Next feature (/start-coding)
-4. 🧭 Navigation (/orient anytime)
-```
-
-**Your foundation documents are in `.project-docs/`:**
-- `Roadmap.md` - Project vision and goals
-- `VibeTesting.md` - User experience design
-- `ComponentLibrary.md` - Design system
-- `SLC_Session_Notes.md` - Development planning
+### **3-Party Collaboration:**
+- **You:** Project director making decisions and testing results
+- **Chat AI:** Strategic planning and requirements definition
+- **CLI AI:** Technical implementation and file operations
 
 ---
 
 ## Overview
 
-[2-3 sentence description of your project. What problem does it solve? Who is it for?]
+[After `/start-coding` foundation interview, this section will be populated with your project's specific goals, target users, and core value proposition]
 
 ## Features
+
+[Will be populated during your feature development workflow]
 
 - [Key feature 1]
 - [Key feature 2] 
@@ -49,9 +80,10 @@ This project uses the AI-Assisted Development Framework for efficient feature de
 
 ### Prerequisites
 
+[Will be defined during foundation setup based on your tech stack choices]
+
 - [Prerequisite 1 - e.g., Node.js 18+]
 - [Prerequisite 2 - e.g., Python 3.11+]
-- [Any other requirements]
 
 ### Installation
 
@@ -61,19 +93,21 @@ git clone [your-repo-url]
 cd [project-directory]
 
 # Install dependencies
-[installation commands]
+[installation commands - will be defined during setup]
 ```
 
 ### Usage
 
 ```bash
 # Basic usage example
-[command to run your project]
+[command to run your project - will be defined during development]
 ```
 
-[Include a simple usage example or screenshot if applicable]
+---
 
-## Project Structure
+## Project Structure (After Setup)
+
+After running `/setup-project`, your workspace becomes:
 
 ```
 [project-name]/
@@ -83,9 +117,9 @@ cd [project-directory]
 ├── src/                    # Source code
 ├── tasks/                  # Feature PRDs and task lists
 ├── tests/                  # Test files
+├── setup-claude-chat-ai/   # Chat AI Strategist setup (optional)
 ├── AI_CONTEXT.md          # AI assistant project briefing
-├── README.md              # AI development framework guide
-├── README-project.md      # This file - project documentation
+├── README.md              # This file - project documentation
 ├── TODO.md                # Development task tracking
 └── WORKFLOW_GUIDE.md      # Complete development workflow
 ```
@@ -127,13 +161,13 @@ This project uses a structured AI collaboration workflow:
 ### Running Tests
 
 ```bash
-[test commands]
+[test commands - will be defined during development]
 ```
 
 ### Building
 
 ```bash
-[build commands]
+[build commands - will be defined during development]
 ```
 
 ## AI Development Context
@@ -160,11 +194,8 @@ This context automatically loads when using Claude Code or Gemini CLI.
 
 [Your license - e.g., MIT, Apache 2.0, etc.]
 
-## Acknowledgments
-
-- Built using the AI-Assisted Development Framework
-- [Any other acknowledgments]
-
 ---
 
-**💡 Need help with development?** Run `/orient` for current state and next steps, or see `WORKFLOW_GUIDE.md` for complete instructions.
+**🎯 Ready to build?** Start with `/setup-project` then `/start-coding`
+
+Built using the AI-Assisted Development Framework for efficient, high-quality development.
