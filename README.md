@@ -6,17 +6,19 @@ This repository is a template for starting new software projects using a structu
 
 ## 🚀 Getting Started (2 minutes)
 
-### **Step 1: Fork This Template**
+### **Step 1: Use This Template**
 
 **Create your project repository on GitHub:**
 
-1. **Fork this repository:**
-   - Click the **"Fork"** button at the top of this GitHub page
-   - Choose your GitHub account as the destination
-   - Name your fork (this becomes your project name)
-   - ✅ **Uncheck "Copy the main branch only"** to get all template updates
+1. **Use this template:**
+   - Click the **"Use this template"** button at the top of this GitHub page
+   - Choose **"Create a new repository"**
+   - Select your GitHub account as the owner
+   - Name your repository (this becomes your project name)
+   - Choose public or private as needed
+   - Click **"Create repository"**
 
-2. **Clone YOUR fork locally:**
+2. **Clone YOUR new repository locally:**
    ```bash
    git clone https://github.com/YOUR-USERNAME/YOUR-PROJECT-NAME.git
    cd YOUR-PROJECT-NAME
@@ -42,19 +44,29 @@ claude
 /start-coding
 ```
 
-**✅ Benefits of Fork Approach:**
-- **Professional GitHub workflow** - Industry standard for templates
-- **Upstream template updates** - Get improvements automatically via upstream remote
-- **Clean git history** - Proper project lineage and commit tracking
-- **No file pollution** - GitHub handles everything correctly
+**What `/setup-project` does for you:**
+1. **Validates workspace safety** - Checks if setup was already completed to prevent double-execution
+2. **Configures git remotes** - Adds template remote pointing to `ai-new-project-template` for inheriting updates
+3. **Copies essential workflow files** - Moves `.ai-rules/`, `.project-docs/`, and `.claude/` from scaffolding to your project root
+4. **Creates project documentation** - Transforms template files into your project's `README.md` and `TODO.md`
+5. **Sets up source directory** - Creates `src/` folder for your application code
+6. **Cleans up scaffolding** - Removes `_project-scaffolding/` directory (contents now in proper locations)
+7. **Commits setup changes** - Creates a clean git commit documenting the workspace transformation
+8. **Enables template inheritance** - Shows you can now get template improvements with `git pull template main`
+
+**✅ Benefits of Template Approach:**
+- **Clean GitHub workflow** - Purpose-built for template usage
+- **Template inheritance** - Get improvements via template remote
+- **Independent repository** - Your project owns its own git history
+- **Professional setup** - GitHub's recommended template pattern
 
 ## 🎯 Complete User Journey
 
 ```
-1. Fork template on GitHub → your-username/your-project-name
-2. Clone YOUR fork → local development
+1. Use template on GitHub → your-username/your-project-name
+2. Clone YOUR repository → local development
 3. cd your-project-name (CRITICAL!)
-4. /setup-project (one-time workspace setup + upstream remote)
+4. /setup-project (one-time workspace setup + template remote)
 5. Setup Chat AI Strategist (recommended)
 6. /start-coding (foundation → PRD → tasks → implementation)
 7. /start-coding (next feature: PRD → tasks → implementation)
@@ -63,7 +75,7 @@ claude
 
 ### **What Each Command Does:**
 
-- **`/setup-project`** - Transform template files, configure upstream remote, clean git history
+- **`/setup-project`** - Transform template files, configure template remote, setup workspace
 - **`/start-coding`** - Intelligent feature development orchestrator  
 - **`/orient`** - Check current state and get guidance anytime
 
@@ -101,21 +113,21 @@ your-project/
 
 ## ⚡ Advanced Features
 
-- **Upstream Template Updates** - Pull improvements from template via `git pull upstream main`
+- **Template Inheritance** - Pull improvements from template via `git pull template main`
 - **Smart State Detection** - Commands know where you are in the workflow
 - **Progressive Validation** - 4-level quality gates prevent error accumulation
 - **Context Engineering** - AI assistants get comprehensive project context
 - **Plan Mode Integration** - Safe exploration with Claude Code CLI
 - **Multi-Feature Support** - Handle multiple features in same project
 - **Recovery Handling** - Resume work after interruptions
-- **Professional Git Workflow** - Fork → develop → sync with upstream
+- **Clean Git Workflow** - Template → develop → independent project evolution
 
 ## 🔄 Getting Template Updates
 
 ### **Pull Latest Template Improvements:**
 ```bash
 # Your /setup-project command configures this automatically
-git pull upstream main
+git pull template main
 
 # Resolve any conflicts with your project-specific changes
 # Your project customizations remain intact
@@ -149,31 +161,31 @@ git pull upstream main
 **"I'm getting git errors or wrong directory issues"**
 - Make sure you're in YOUR project directory: `pwd`
 - Should show `your-project-name`, not `ai-new-project-template`
-- Run `/setup-project` to fix git configuration
-- Check GitHub remote: `git remote -v` should show YOUR fork
+- Run `/setup-project` to fix workspace configuration
+- Check GitHub remote: `git remote -v` should show YOUR repository + template
 
 **"How do I get template updates?"**
-- Use `git pull upstream main` to get latest improvements
-- `/setup-project` configures upstream remote automatically
+- Use `git pull template main` to get latest improvements
+- `/setup-project` configures template remote automatically
 - Resolve conflicts to keep your customizations
 
 ### **If You Get Stuck:**
 1. Try `/orient` for current state and next steps
 2. Check `WORKFLOW_GUIDE.md` for detailed explanations
 3. Ensure you're in YOUR project directory: `pwd`
-4. Verify git remotes: `git remote -v` (should show your fork + upstream)
-5. Create fresh fork if needed
+4. Verify git remotes: `git remote -v` (should show your repository + template)
+5. Create fresh repository from template if needed
 
 ## 📚 Learn More
 
 - **Complete Guide:** See `WORKFLOW_GUIDE.md` for detailed workflow
 - **AI Instructions:** Explore `.ai-rules/` for AI command details
 - **Context Engineering:** Built on proven AI collaboration principles
-- **Template Evolution:** This template continuously improves - fork to benefit!
+- **Template Evolution:** This template continuously improves - use template updates to benefit!
 
 ---
 
-**Ready to build? Fork → Clone → `/setup-project` → `/start-coding`**
+**Ready to build? Use Template → Clone → `/setup-project` → `/start-coding`**
 
 ## 🎯 Why This Template Works
 
@@ -183,9 +195,9 @@ git pull upstream main
 - Eliminates repetitive explanations and reduces errors
 
 ### **Professional Development Workflow**  
-- GitHub fork pattern follows open-source best practices
-- Upstream template updates keep your projects current
-- Clean git history and proper project lineage
+- GitHub template pattern follows recommended practices
+- Independent repository ownership
+- Clean git history focused on your project
 
 ### **Simple, Lovable, Complete Framework**
 - **Simple:** One command to start, clear next steps always

@@ -1,10 +1,10 @@
 # Setup Project
 
-One-time project workspace setup after forking ai-new-project-template.
+One-time project workspace setup after creating project from ai-new-project-template.
 
 ## Command Purpose
 
-Run **once only** after forking and cloning the template to convert ai-new-project-template into a clean project workspace. Includes upstream remote configuration, file transformation, and safety checks to prevent accidental re-execution.
+Run **once only** after creating and cloning a project from the ai-new-project-template to convert scaffolding into a clean project workspace. Includes template remote configuration, file transformation, and safety checks to prevent accidental re-execution.
 
 ## Execution Process
 
@@ -23,7 +23,7 @@ if [ ! -d "_project-scaffolding/" ]; then
     echo "💡 Next steps:"
     echo "   • Use /orient to check your current state"
     echo "   • Use /start-coding to develop features"
-    echo "   • Get template updates: git pull upstream main"
+    echo "   • Get template updates: git pull template main"
     exit 1
 fi
 
@@ -32,7 +32,7 @@ echo "✅ Fresh template detected - proceeding with setup..."
 
 ### Phase 2: Smart Git Configuration
 
-Configure git remotes properly for fork workflow with upstream template updates:
+Configure git remotes properly for template workflow with template updates:
 
 ```bash
 echo "🔧 Configuring git for template updates..."
@@ -41,22 +41,22 @@ echo "🔧 Configuring git for template updates..."
 CURRENT_REMOTE=$(git remote get-url origin 2>/dev/null || echo "none")
 echo "   📡 Current origin: $CURRENT_REMOTE"
 
-# Add upstream remote to original template (if not already exists)
-if ! git remote get-url upstream 2>/dev/null; then
-    echo "   🔗 Adding upstream remote for template updates..."
-    git remote add upstream https://github.com/petergiordano/ai-new-project-template.git
-    echo "   ✅ Upstream remote added: ai-new-project-template"
+# Add template remote to original template (if not already exists)
+if ! git remote get-url template 2>/dev/null; then
+    echo "   🔗 Adding template remote for template updates..."
+    git remote add template https://github.com/petergiordano/ai-new-project-template.git
+    echo "   ✅ Template remote added: ai-new-project-template"
 else
-    echo "   ✅ Upstream remote already configured"
+    echo "   ✅ Template remote already configured"
 fi
 
 # Verify remote configuration
 echo "   📋 Git remote configuration:"
 git remote -v | sed 's/^/      /'
 
-# Fetch upstream to enable template updates
-echo "   ⬇️  Fetching upstream template for future updates..."
-git fetch upstream --quiet
+# Fetch template to enable template updates
+echo "   ⬇️  Fetching template for future updates..."
+git fetch template --quiet
 echo "   ✅ Template update capability configured"
 ```
 
@@ -64,42 +64,60 @@ echo "   ✅ Template update capability configured"
 
 Execute these file operations in order:
 
-1. **Copy template files to working positions:**
+1. **Copy scaffolding contents to project root:**
    ```bash
-   echo "📁 Setting up project files..."
+   echo "📁 Setting up project workspace..."
+   
+   # Copy essential scaffolding directories to root
+   cp -r "_project-scaffolding/.ai-rules" ".ai-rules"
+   echo "   ✅ Copied .ai-rules/ (AI workflow instructions)"
+   
+   cp -r "_project-scaffolding/.project-docs" ".project-docs"
+   echo "   ✅ Copied .project-docs/ (planning templates)"
+   
+   cp -r "_project-scaffolding/.claude" ".claude"
+   echo "   ✅ Copied .claude/ (Claude Code commands)"
+   
+   # Create src directory if it doesn't exist
+   mkdir -p "src"
+   echo "   ✅ Created src/ (source code directory)"
+   
+   # Transform specific project files
    cp "_project-scaffolding/README-project-template.md" "README.md"
    cp "_project-scaffolding/TODO-template.md" "TODO.md"
    echo "   ✅ Created README.md (project-focused)"
    echo "   ✅ Created TODO.md (project task tracking)"
    ```
 
-2. **Clean up scaffolding but preserve important directories:**
+2. **Clean up scaffolding directory only:**
    ```bash
-   echo "🧹 Cleaning up template files..."
-   # Remove scaffolding directory (setup complete)
+   echo "🧹 Cleaning up scaffolding..."
+   # Remove scaffolding directory (contents now copied to root)
    rm -rf "_project-scaffolding/"
-   echo "   ✅ Removed _project-scaffolding/ (setup complete)"
+   echo "   ✅ Removed _project-scaffolding/ (contents copied to root)"
    
    # Keep setup-claude-chat-ai/ directory for user to configure Chat AI Strategist
    echo "   ✅ Preserved setup-claude-chat-ai/ (Chat AI setup instructions)"
    
-   # Keep all other template files for upstream merging capability
-   echo "   ✅ Preserved template files (enables upstream updates)"
+   # Keep all other template files for template merging capability
+   echo "   ✅ Preserved template files (enables template updates)"
    ```
 
 3. **Commit the project setup:**
    ```bash
    echo "💾 Creating setup commit..."
-   git add README.md TODO.md
+   git add README.md TODO.md .ai-rules/ .project-docs/ .claude/ src/
    git add -u  # Add removal of _project-scaffolding/
    git commit -m "feat: convert template to project workspace
 
+- Copy .ai-rules/, .project-docs/, .claude/ to root
 - Transform README-project-template.md → README.md
-- Transform TODO-template.md → TODO.md  
-- Remove _project-scaffolding/ (setup complete)
-- Configure upstream for template updates
+- Transform TODO-template.md → TODO.md
+- Create src/ directory for source code
+- Remove _project-scaffolding/ (contents copied)
+- Configure template remote for updates
 
-Template source: $(git remote get-url upstream)
+Template source: $(git remote get-url template)
 Setup date: $(date '+%Y-%m-%d %H:%M:%S')"
    echo "   ✅ Project setup committed to git history"
    ```
@@ -118,18 +136,18 @@ echo "   ✅ .ai-rules/ (workflow instructions)"
 echo "   ✅ .project-docs/ (planning templates)"
 echo "   ✅ src/ (source code directory)"
 echo "   📋 setup-claude-chat-ai/ (Chat AI setup instructions)"
-echo "   🔗 Git remotes configured (origin + upstream)"
+echo "   🔗 Git remotes configured (origin + template)"
 echo ""
 echo "🔄 Template Update Capability:"
 echo "   📡 Origin: $(git remote get-url origin)"
-echo "   ⬆️  Upstream: $(git remote get-url upstream)"
-echo "   💡 Get updates anytime: git pull upstream main"
+echo "   🔗 Template: $(git remote get-url template)"
+echo "   💡 Get updates anytime: git pull template main"
 echo ""
 echo "🚀 Your Development Journey:"
 echo ""
-echo "   1. ✅ Fork template on GitHub → your-username/your-project-name"
-echo "   2. ✅ Clone YOUR fork → local development"
-echo "   3. ✅ /setup-project (workspace setup + upstream) ← YOU ARE HERE"
+echo "   1. ✅ Use template on GitHub → your-username/your-project-name"
+echo "   2. ✅ Clone YOUR repository → local development"
+echo "   3. ✅ /setup-project (workspace setup + template remote) ← YOU ARE HERE"
 echo "   4. 🔄 Setup Chat AI Strategist (see setup-claude-chat-ai/)"
 echo "   5. 🔄 /start-coding (foundation → PRD → tasks → implementation)"
 echo "   6. 🔄 /start-coding (next feature: PRD → tasks → implementation)"
@@ -141,9 +159,9 @@ echo "   • Run /start-coding to begin feature development"
 echo "   • Run /orient anytime to check current state"
 echo ""
 echo "🔄 Getting Template Updates:"
-echo "   • New AI rules: git pull upstream main"
-echo "   • Enhanced commands: git pull upstream main"  
-echo "   • Workflow improvements: git pull upstream main"
+echo "   • New AI rules: git pull template main"
+echo "   • Enhanced commands: git pull template main"  
+echo "   • Workflow improvements: git pull template main"
 echo "   • Resolve conflicts to keep your customizations"
 echo ""
 echo "Ready to start building with continuous template updates! 🚀"
@@ -234,19 +252,19 @@ if ! git remote get-url origin 2>/dev/null; then
 fi
 ```
 
-### **Upstream Remote Handling**
+### **Template Remote Handling**
 ```bash
-# Safe upstream remote addition
-if ! git remote get-url upstream 2>/dev/null; then
-    git remote add upstream https://github.com/petergiordano/ai-new-project-template.git
-    echo "✅ Upstream remote added"
+# Safe template remote addition
+if ! git remote get-url template 2>/dev/null; then
+    git remote add template https://github.com/petergiordano/ai-new-project-template.git
+    echo "✅ Template remote added"
 else
-    echo "ℹ️ Upstream remote already exists"
+    echo "ℹ️ Template remote already exists"
 fi
 
-# Verify upstream fetch capability
-if ! git fetch upstream --dry-run 2>/dev/null; then
-    echo "⚠️ Warning: Could not fetch from upstream"
+# Verify template fetch capability
+if ! git fetch template --dry-run 2>/dev/null; then
+    echo "⚠️ Warning: Could not fetch from template"
     echo "Template updates may not work - check internet connection"
 fi
 ```
@@ -272,24 +290,24 @@ If setup fails or user needs template updates:
 ```
 🔄 Template Update Recovery:
 1. Check remotes: git remote -v
-2. Add upstream if missing: git remote add upstream [template-url] 
-3. Fetch updates: git fetch upstream
-4. Merge updates: git pull upstream main
+2. Add template if missing: git remote add template [template-url] 
+3. Fetch updates: git fetch template
+4. Merge updates: git pull template main
 5. Resolve conflicts keeping your customizations
 ```
 
 ## Command Positioning
 
-### **Fork-Aware Setup Command**
-- Preserves GitHub fork relationship for professional workflow
-- Configures upstream remote for continuous template improvements
+### **Template-Aware Setup Command**
+- Works with GitHub template-created repositories
+- Configures template remote for continuous template improvements
 - Maintains git history for proper project lineage
 - **Enables template evolution inheritance**
 
 ### **Workflow Integration**
 ```
 User journey:
-Fork template → Clone YOUR fork → cd your-project → /setup-project → /start-coding
+Use template → Clone YOUR repository → cd your-project → /setup-project → /start-coding
                                                         ↓
                                             Configures template updates
 ```
