@@ -4,21 +4,35 @@
 
 This repository is a template for starting new software projects using a structured, AI-assisted workflow. It provides a simple command-driven process that guides you from project idea to implementation.
 
-## 🚀 Getting Started (2 minutes)
+## 🚀 Getting Started (3 minutes)
 
-### **Step 1: Create Your Project Workspace**
+### **Step 1: Copy Template to Your Project**
 
-**Use "Save As..." in VS Code:**
-1. **File > Save Workspace As...** from this template
-2. **Name your project** (e.g., `my-awesome-app`)
-3. **Open your new workspace** in VS Code
+**Create your project workspace:**
 
-### **Step 2: Start Building**
+1. **Download/clone this template:**
+   ```bash
+   # Option A: Download and extract ZIP from GitHub
+   # Option B: Clone the template
+   git clone https://github.com/petergiordano/ai-new-project-template.git your-project-name
+   ```
 
-**Open terminal and run these commands:**
+2. **Navigate to your project:**
+   ```bash
+   cd your-project-name
+   ```
+
+3. **Open in VS Code:**
+   ```bash
+   code .
+   ```
+
+### **Step 2: Essential Setup**
+
+**Open terminal in VS Code and run these commands:**
 
 ```bash
-# Start Claude Code CLI
+# Start Claude Code CLI (make sure you're in YOUR project directory)
 claude
 
 # Set up your project workspace (one-time only)
@@ -28,22 +42,23 @@ claude
 /start-coding
 ```
 
-That's it! The commands will guide you through everything else.
+**⚠️ Critical:** Make sure your terminal is in YOUR project directory, not the original template directory!
 
 ## 🎯 Complete User Journey
 
 ```
-1. "Save As..." template → your-project-workspace
-2. /setup-project (one-time workspace setup)
-3. Setup Chat AI Strategist (recommended)
-4. /start-coding (foundation → PRD → tasks → implementation)
-5. /start-coding (next feature: PRD → tasks → implementation)
-6. /orient (anytime navigation)
+1. Clone/copy template → your-project-directory
+2. cd your-project-directory (IMPORTANT!)
+3. /setup-project (one-time workspace setup & git cleanup)
+4. Setup Chat AI Strategist (recommended)
+5. /start-coding (foundation → PRD → tasks → implementation)
+6. /start-coding (next feature: PRD → tasks → implementation)
+7. /orient (anytime navigation)
 ```
 
 ### **What Each Command Does:**
 
-- **`/setup-project`** - One-time cleanup and workspace preparation
+- **`/setup-project`** - One-time cleanup, git reset, and workspace preparation
 - **`/start-coding`** - Intelligent feature development orchestrator  
 - **`/orient`** - Check current state and get guidance anytime
 
@@ -73,7 +88,7 @@ your-project/
 ├── src/                        # Your application source code
 ├── tasks/                      # Feature PRDs and task lists
 ├── setup-claude-chat-ai/       # Chat AI Strategist setup instructions
-├── README-project.md           # Your project's README
+├── README.md                   # Your project's README (this gets replaced)
 ├── TODO.md                     # Development task tracking
 ├── AI_CONTEXT.md              # AI assistant briefing
 └── WORKFLOW_GUIDE.md          # Complete workflow documentation
@@ -87,6 +102,7 @@ your-project/
 - **Plan Mode Integration** - Safe exploration with Claude Code CLI
 - **Multi-Feature Support** - Handle multiple features in same project
 - **Recovery Handling** - Resume work after interruptions
+- **Git Cleanup** - Automatically resets git history for your project
 
 ## 🆘 Need Help?
 
@@ -95,7 +111,7 @@ your-project/
 **"What if I mess something up?"**
 - Use `/orient` to check current state
 - Commands include recovery guidance
-- Safe to restart with fresh "Save As..." copy
+- Safe to restart with fresh template copy
 
 **"Can I use different AI assistants?"**
 - Yes! Works with Claude, ChatGPT, Gemini
@@ -107,10 +123,16 @@ your-project/
 - System tracks multiple PRDs and task lists
 - Maintains project-wide context
 
+**"I'm getting git errors or wrong directory issues"**
+- Make sure you're in YOUR project directory: `pwd`
+- Run `/setup-project` to clean up git and file structure
+- Check that terminal shows your project name, not 'ai-new-project-template'
+
 ### **If You Get Stuck:**
 1. Try `/orient` for current state and next steps
 2. Check `WORKFLOW_GUIDE.md` for detailed explanations
-3. Use `/setup-project` on fresh template copy if needed
+3. Ensure you're in the correct directory: `pwd`
+4. Use fresh template copy if needed
 
 ## 📚 Learn More
 
@@ -120,4 +142,4 @@ your-project/
 
 ---
 
-**Ready to build? Start with "Save As..." → `/setup-project` → `/start-coding`**
+**Ready to build? Clone → cd your-project → `/setup-project` → `/start-coding`**
