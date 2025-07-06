@@ -83,7 +83,7 @@ Based on detected stage, provide numbered options:
 ```
 📍 Status: Template Setup Required
 🎯 Next Actions:
-1. Run /setup-project (transforms template to project workspace)
+1. Run /project-setup (transforms template to project workspace)
 2. Check git remotes for template remote connection
 3. View complete setup instructions
 4. Learn about the 5-step workflow

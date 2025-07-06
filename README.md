@@ -43,13 +43,13 @@ This repository is a template for starting new software projects using a structu
 claude
 
 # Set up your project workspace (one-time only)
-/setup-project
+/project-setup
 
 # Begin feature development 
 /start-coding
 ```
 
-**What `/setup-project` does for you:**
+**What `/project-setup` does for you:**
 1. **Validates workspace safety** - Checks if setup was already completed to prevent double-execution
 2. **Configures git remotes** - Adds template remote pointing to `ai-new-project-template` for inheriting updates
 3. **Copies essential workflow files** - Moves `.ai-rules/`, `.project-docs/`, and `.claude/` from scaffolding to your project root
@@ -71,7 +71,7 @@ claude
 1. Use template on GitHub → your-username/your-project-name
 2. Clone YOUR repository → local development
 3. cd your-project-name (CRITICAL!)
-4. /setup-project (one-time workspace setup + template remote)
+4. /project-setup (one-time workspace setup + template remote)
 5. Setup Chat AI Strategist (recommended)
 6. /start-coding (foundation → PRD → tasks → implementation)
 7. /start-coding (next feature: PRD → tasks → implementation)
@@ -80,7 +80,7 @@ claude
 
 ### **What Each Command Does:**
 
-- **`/setup-project`** - Transform template files, configure template remote, setup workspace
+- **`/project-setup`** - Transform template files, configure template remote, setup workspace
 - **`/start-coding`** - Intelligent feature development orchestrator  
 - **`/orient`** - Check current state and get guidance anytime
 
@@ -131,7 +131,7 @@ your-project/
 
 ### **Pull Latest Template Improvements:**
 ```bash
-# Your /setup-project command configures this automatically
+# Your /project-setup command configures this automatically
 git pull template main
 
 # Resolve any conflicts with your project-specific changes
@@ -166,12 +166,12 @@ git pull template main
 **"I'm getting git errors or wrong directory issues"**
 - Make sure you're in YOUR project directory: `pwd`
 - Should show `your-project-name`, not `ai-new-project-template`
-- Run `/setup-project` to fix workspace configuration
+- Run `/project-setup` to fix workspace configuration
 - Check GitHub remote: `git remote -v` should show YOUR repository + template
 
 **"How do I get template updates?"**
 - Use `git pull template main` to get latest improvements
-- `/setup-project` configures template remote automatically
+- `/project-setup` configures template remote automatically
 - Resolve conflicts to keep your customizations
 
 ### **If You Get Stuck:**
@@ -190,7 +190,7 @@ git pull template main
 
 ---
 
-**Ready to build? Use Template → Clone → `/setup-project` → `/start-coding`**
+**Ready to build? Use Template → Clone → `/project-setup` → `/start-coding`**
 
 ## 🎯 Why This Template Works
 

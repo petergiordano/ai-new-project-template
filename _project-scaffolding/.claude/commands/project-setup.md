@@ -1,4 +1,4 @@
-# Setup Project
+# Project Setup
 
 One-time project workspace setup after creating project from ai-new-project-template.
 
