@@ -56,8 +56,9 @@ Once you have your project workspace set up:
 
 2. **Copy scaffolding files** to your workspace root:
    ```bash
-   # Copy AI rules and project docs to workspace root
+   # Copy AI rules, project docs, and Claude config to workspace root
    cp -r _project-scaffolding/.ai-rules .
+   cp -r _project-scaffolding/.claude .
    cp -r _project-scaffolding/.project-docs .
    
    # Optional: Remove the scaffolding directory after copying
@@ -87,7 +88,7 @@ Once you have your project workspace set up:
 2. **✅ Verify setup** - Run the workspace checklist from WORKFLOW_GUIDE.md:
    ```bash
    pwd  # Should show your project path
-   ls -la  # Should see .ai-rules/, .project-docs/, src/, AI_CONTEXT.md
+   ls -la  # Should see .ai-rules/, .claude/, .project-docs/, src/, AI_CONTEXT.md
    ```
 
 3. **🎯 Choose your path** based on your current needs:
@@ -176,6 +177,10 @@ your-project-name/
 │   ├── 06_generate-tasks-command.md    # Enhanced task generation
 │   ├── 07_context-validation-checkpoints.md  # Context validation
 │   └── 08_validation-loops.md          # Progressive validation system
+├── .claude/                # Claude Code configuration and commands
+│   ├── commands/
+│   │   └── orient.md                   # Universal project navigation command
+│   └── settings.local.json             # Claude Code permissions
 ├── .project-docs/          # High-level project planning documents
 │   ├── Roadmap.md                      # Project vision and strategy
 │   ├── ComponentLibrary.md            # Design system and UI patterns
@@ -242,6 +247,7 @@ This template includes advanced context engineering capabilities:
 - **🛡️ Plan Mode Integration:** Safe exploration and analysis with Claude Code CLI
 - **🔧 CLI Context Integration:** CLAUDE.md and GEMINI.md automatically load project context
 - **⚡ Zero-Setup CLI Assistance:** Claude Code and Gemini CLI get full project context on startup
+- **🧠 Universal `/orient` Command:** Get re-oriented and see next best actions from anywhere in your project
 - **🚀 Claude Task Master Integration:** Optional advanced task management with dependency tracking and complexity analysis
 
 ## Support & Resources

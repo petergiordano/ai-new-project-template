@@ -65,8 +65,16 @@
 - [x] Updated all documentation to reference CLI context integration
 - [x] Ensured context handoff efficiency between Chat AI and CLI AI roles
 
-### 6. Implement a foolproof way for the user to get unstuck
-- Create a simple command the user can issue to have the framework, claude code, gemini cli, mcp servers, etc tell the user what they're options are. 
+### 🔄 6. Implement Universal `/orient` Command - **IN PROGRESS**
+**Goal:** Create a foolproof way for users to get re-oriented and see next best actions
+- [x] Create basic `/orient` command structure in `.claude/commands/orient.md`
+- [x] Add `.claude/settings.local.json` for proper Claude Code integration
+- [ ] Test `/orient` command in actual project
+- [ ] Add intelligent project state detection logic
+- [ ] Build contextual action menus based on workflow stage
+- [ ] Add self-teaching integration for CLI AI
+- [ ] Create `/orient detailed` and `/orient help` variations
+- [ ] Document new command in WORKFLOW_GUIDE.md and README.md 
 - 
 
 ## Current Template Status
