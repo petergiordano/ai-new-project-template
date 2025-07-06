@@ -65,6 +65,10 @@
 - [x] Updated all documentation to reference CLI context integration
 - [x] Ensured context handoff efficiency between Chat AI and CLI AI roles
 
+### 6. Implement a foolproof way for the user to get unstuck
+- Create a simple command the user can issue to have the framework, claude code, gemini cli, mcp servers, etc tell the user what they're options are. 
+- 
+
 ## Current Template Status
 - ✅ Core workflow (5 steps) complete
 - ✅ Plan Mode integration complete  

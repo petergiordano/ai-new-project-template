@@ -379,6 +379,79 @@ This systematic approach ensures that both you and the AI have comprehensive con
 
 ---
 
+## 🚀 Advanced Task Management with Claude Task Master (Optional)
+
+*This section explains how to enhance Steps 4-5 with Claude Task Master MCP for sophisticated task management.*
+
+### **What is Claude Task Master?**
+
+Claude Task Master is an AI-powered task management system that integrates with our framework to provide advanced task execution capabilities:
+
+- **PRD Parsing:** Automatically generate tasks from requirements documents
+- **Complexity Analysis:** Identify which tasks need breakdown using AI research
+- **Smart Dependencies:** Intelligent task sequencing and dependency management
+- **Progress Tracking:** Systematic status management and next-task recommendations
+
+### **Integration with Our Framework**
+
+**Our Framework Provides:**
+- Project setup and context engineering (Steps 1-3)
+- AI collaboration patterns and validation systems
+- Context accumulation and session bridging
+
+**Task Master Enhances:**
+- Task generation sophistication (Step 4)
+- Task execution management (Step 5)
+- Dependency tracking and complexity analysis
+
+### **Enhanced Workflow Options**
+
+**Standard Step 4:** Use our AI rule-based task generation  
+**Enhanced Step 4:** Use Task Master's `parse_prd` for more sophisticated task breakdown
+
+**Standard Step 5:** Manual task tracking with commit messages  
+**Enhanced Step 5:** Use Task Master tools for dependency management and smart task selection
+
+### **Key Task Master Tools for Our Workflow**
+
+**For Enhanced Task Generation (Step 4):**
+- `parse_prd` - Parse your PRD into structured tasks with dependencies
+- `analyze_project_complexity` - Identify tasks needing further breakdown
+- `expand_all` - Break down complex tasks into manageable subtasks
+
+**For Enhanced Task Execution (Step 5):**
+- `next_task` - Get dependency-aware task recommendations
+- `get_task` - Understand task context and requirements
+- `set_task_status` - Track progress systematically
+- `update_task` - Modify tasks based on implementation learnings
+
+### **Setup Claude Task Master**
+
+**If you want to use these enhanced capabilities:**
+
+1. **Install Task Master MCP** in your editor (Cursor, Claude Desktop, etc.)
+2. **Configure API keys** for AI model access
+3. **Initialize in your project:** Use `initialize_project` tool
+4. **Choose enhanced options** in Steps 4-5 of our workflow
+
+### **Workflow Decision Points**
+
+**Step 4 Decision:**
+- **Simple projects:** Use our standard AI rule-based approach
+- **Complex projects:** Use Task Master `parse_prd` for sophisticated breakdown
+
+**Step 5 Decision:**
+- **Linear development:** Use our standard commit-based tracking
+- **Complex dependencies:** Use Task Master tools for smart task management
+
+**Both approaches maintain:**
+- ✅ Context engineering from our framework
+- ✅ Progressive validation loops
+- ✅ Chat AI ↔ CLI AI collaboration patterns
+- ✅ Human-in-the-loop control
+
+---
+
 ## 🛠️ Advanced Features & Context Engineering
 
 This workflow leverages advanced context engineering principles:

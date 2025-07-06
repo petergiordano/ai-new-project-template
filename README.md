@@ -101,6 +101,7 @@ Once you have your project workspace set up:
 → AI-driven interview creates your project foundation  
 → Generates: Roadmap.md, VibeTesting.md, ComponentLibrary.md, SLC_Session_Notes.md, AI_CONTEXT.md
 → Ready to build features with Steps 2-5
+→ Optional: Consider Claude Task Master integration for advanced task management
 ```
 
 **Next Action:** Open WORKFLOW_GUIDE.md and go to "Step 1: Generate Project Context Documents"
@@ -241,12 +242,14 @@ This template includes advanced context engineering capabilities:
 - **🛡️ Plan Mode Integration:** Safe exploration and analysis with Claude Code CLI
 - **🔧 CLI Context Integration:** CLAUDE.md and GEMINI.md automatically load project context
 - **⚡ Zero-Setup CLI Assistance:** Claude Code and Gemini CLI get full project context on startup
+- **🚀 Claude Task Master Integration:** Optional advanced task management with dependency tracking and complexity analysis
 
 ## Support & Resources
 
 - **Primary Guide:** See `WORKFLOW_GUIDE.md` for complete instructions
 - **AI Rules:** Explore `.ai-rules/` directory for detailed AI instruction templates
 - **Context Engineering:** Built on proven context engineering principles for reliable AI collaboration
+- **Advanced Task Management:** Optional Claude Task Master integration for sophisticated task execution (see WORKFLOW_GUIDE.md)
 
 ---
 
