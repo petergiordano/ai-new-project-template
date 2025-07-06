@@ -29,7 +29,8 @@
   - **Updated:** `.claude/commands/project-setup.md` (removed `.claude/` copy operation)
   - **Updated:** `README.md` (corrected documentation about file copying)
 - **Result:** Users now have immediate access to `/project-setup` command upon template creation
-- **Testing Ready:** Template inheritance system fully functional
+- **Follow-up Fix:** Updated `/orient` command to recommend `/start-coding` (main orchestrator) instead of individual step commands
+- **Testing Confirmed:** Template inheritance system fully functional ✅
 
 ---
 

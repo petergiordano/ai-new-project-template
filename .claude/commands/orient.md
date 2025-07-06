@@ -94,37 +94,37 @@ Based on detected stage, provide numbered options:
 ```
 📍 Status: Step 3 - Product Requirements Document
 🎯 Next Actions:
-1. Create PRD for new feature (/generate-prp)
-2. View existing project context (read AI_CONTEXT.md)
-3. Review workflow guidance (WORKFLOW_GUIDE.md)
-4. Start with example PRD template
+1. Start feature development workflow (/start-coding)
+2. Create PRD for new feature (guided by /start-coding)
+3. View existing project context (read AI_CONTEXT.md)
+4. Review workflow guidance (WORKFLOW_GUIDE.md)
 ```
 
 **Step 4 - Task Generation:**
 ```
 📍 Status: Step 4 - Task List Generation  
 🎯 Next Actions:
-1. Generate tasks from existing PRD (/generate-tasks)
-2. Use Task Master for enhanced task breakdown
-3. Review and refine PRD before task generation
-4. View task generation examples
+1. Continue feature development workflow (/start-coding)
+2. Generate tasks from existing PRD (guided by /start-coding)
+3. Use Task Master for enhanced task breakdown
+4. Review and refine PRD before task generation
 ```
 
 **Step 5 - Task Execution:**
 ```
 📍 Status: Step 5 - Active Development
 🎯 Next Actions:
-1. Execute next task from task list (/execute-tasks)
-2. Review current task progress
-3. Run validation checks on completed work
-4. View commit message templates
+1. Continue task execution (/start-coding)
+2. Execute next task from task list (guided by /start-coding)
+3. Review current task progress
+4. Run validation checks on completed work
 ```
 
 **Feature Complete:**
 ```
 📍 Status: Feature Complete
 🎯 Next Actions:
-1. Start new feature (create new PRD)
+1. Start new feature development (/start-coding)
 2. Run final quality checks and testing
 3. Get latest template updates: git pull template main
 4. Review project documentation

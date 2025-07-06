@@ -33,6 +33,12 @@ This repository is a template for starting new software projects using a structu
    - Name it: `your-project-name.code-workspace` (e.g., `test2.code-workspace`)
    - Save it in your project root directory
    - When prompted, choose "Open Workspace"
+  
+5. **Import Claude Desktop MCP Servers:**
+   - Do this on the terminal, NOT within Claude Code!
+```bash
+claude mcp add-from-claude-desktop
+```
 
 ### **Step 2: Essential Setup**
 
