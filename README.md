@@ -4,22 +4,22 @@
 
 This repository is a template for starting new software projects using a structured, AI-assisted workflow. It provides a simple command-driven process that guides you from project idea to implementation.
 
-## 🚀 Getting Started (3 minutes)
+## 🚀 Getting Started (2 minutes)
 
-### **Step 1: Copy Template to Your Project**
+### **Step 1: Fork This Template**
 
-**Create your project workspace:**
+**Create your project repository on GitHub:**
 
-1. **Download/clone this template:**
+1. **Fork this repository:**
+   - Click the **"Fork"** button at the top of this GitHub page
+   - Choose your GitHub account as the destination
+   - Name your fork (this becomes your project name)
+   - ✅ **Uncheck "Copy the main branch only"** to get all template updates
+
+2. **Clone YOUR fork locally:**
    ```bash
-   # Option A: Download and extract ZIP from GitHub
-   # Option B: Clone the template
-   git clone https://github.com/petergiordano/ai-new-project-template.git your-project-name
-   ```
-
-2. **Navigate to your project:**
-   ```bash
-   cd your-project-name
+   git clone https://github.com/YOUR-USERNAME/YOUR-PROJECT-NAME.git
+   cd YOUR-PROJECT-NAME
    ```
 
 3. **Open in VS Code:**
@@ -42,23 +42,28 @@ claude
 /start-coding
 ```
 
-**⚠️ Critical:** Make sure your terminal is in YOUR project directory, not the original template directory!
+**✅ Benefits of Fork Approach:**
+- **Professional GitHub workflow** - Industry standard for templates
+- **Upstream template updates** - Get improvements automatically via upstream remote
+- **Clean git history** - Proper project lineage and commit tracking
+- **No file pollution** - GitHub handles everything correctly
 
 ## 🎯 Complete User Journey
 
 ```
-1. Clone/copy template → your-project-directory
-2. cd your-project-directory (IMPORTANT!)
-3. /setup-project (one-time workspace setup & git cleanup)
-4. Setup Chat AI Strategist (recommended)
-5. /start-coding (foundation → PRD → tasks → implementation)
-6. /start-coding (next feature: PRD → tasks → implementation)
-7. /orient (anytime navigation)
+1. Fork template on GitHub → your-username/your-project-name
+2. Clone YOUR fork → local development
+3. cd your-project-name (CRITICAL!)
+4. /setup-project (one-time workspace setup + upstream remote)
+5. Setup Chat AI Strategist (recommended)
+6. /start-coding (foundation → PRD → tasks → implementation)
+7. /start-coding (next feature: PRD → tasks → implementation)
+8. /orient (anytime navigation)
 ```
 
 ### **What Each Command Does:**
 
-- **`/setup-project`** - One-time cleanup, git reset, and workspace preparation
+- **`/setup-project`** - Transform template files, configure upstream remote, clean git history
 - **`/start-coding`** - Intelligent feature development orchestrator  
 - **`/orient`** - Check current state and get guidance anytime
 
@@ -96,13 +101,31 @@ your-project/
 
 ## ⚡ Advanced Features
 
+- **Upstream Template Updates** - Pull improvements from template via `git pull upstream main`
 - **Smart State Detection** - Commands know where you are in the workflow
 - **Progressive Validation** - 4-level quality gates prevent error accumulation
 - **Context Engineering** - AI assistants get comprehensive project context
 - **Plan Mode Integration** - Safe exploration with Claude Code CLI
 - **Multi-Feature Support** - Handle multiple features in same project
 - **Recovery Handling** - Resume work after interruptions
-- **Git Cleanup** - Automatically resets git history for your project
+- **Professional Git Workflow** - Fork → develop → sync with upstream
+
+## 🔄 Getting Template Updates
+
+### **Pull Latest Template Improvements:**
+```bash
+# Your /setup-project command configures this automatically
+git pull upstream main
+
+# Resolve any conflicts with your project-specific changes
+# Your project customizations remain intact
+```
+
+**Benefits:**
+- Get new AI rules and workflow improvements
+- Enhanced commands and better error handling  
+- New features and capabilities added to template
+- Maintain your project's custom changes
 
 ## 🆘 Need Help?
 
@@ -111,7 +134,7 @@ your-project/
 **"What if I mess something up?"**
 - Use `/orient` to check current state
 - Commands include recovery guidance
-- Safe to restart with fresh template copy
+- GitHub fork makes it easy to reset: re-clone your fork
 
 **"Can I use different AI assistants?"**
 - Yes! Works with Claude, ChatGPT, Gemini
@@ -125,21 +148,48 @@ your-project/
 
 **"I'm getting git errors or wrong directory issues"**
 - Make sure you're in YOUR project directory: `pwd`
-- Run `/setup-project` to clean up git and file structure
-- Check that terminal shows your project name, not 'ai-new-project-template'
+- Should show `your-project-name`, not `ai-new-project-template`
+- Run `/setup-project` to fix git configuration
+- Check GitHub remote: `git remote -v` should show YOUR fork
+
+**"How do I get template updates?"**
+- Use `git pull upstream main` to get latest improvements
+- `/setup-project` configures upstream remote automatically
+- Resolve conflicts to keep your customizations
 
 ### **If You Get Stuck:**
 1. Try `/orient` for current state and next steps
 2. Check `WORKFLOW_GUIDE.md` for detailed explanations
-3. Ensure you're in the correct directory: `pwd`
-4. Use fresh template copy if needed
+3. Ensure you're in YOUR project directory: `pwd`
+4. Verify git remotes: `git remote -v` (should show your fork + upstream)
+5. Create fresh fork if needed
 
 ## 📚 Learn More
 
 - **Complete Guide:** See `WORKFLOW_GUIDE.md` for detailed workflow
 - **AI Instructions:** Explore `.ai-rules/` for AI command details
 - **Context Engineering:** Built on proven AI collaboration principles
+- **Template Evolution:** This template continuously improves - fork to benefit!
 
 ---
 
-**Ready to build? Clone → cd your-project → `/setup-project` → `/start-coding`**
+**Ready to build? Fork → Clone → `/setup-project` → `/start-coding`**
+
+## 🎯 Why This Template Works
+
+### **Context Engineering Excellence**
+- AI assistants get comprehensive project context automatically
+- Context accumulates across workflow steps for consistency
+- Eliminates repetitive explanations and reduces errors
+
+### **Professional Development Workflow**  
+- GitHub fork pattern follows open-source best practices
+- Upstream template updates keep your projects current
+- Clean git history and proper project lineage
+
+### **Simple, Lovable, Complete Framework**
+- **Simple:** One command to start, clear next steps always
+- **Lovable:** Delightful AI collaboration, minimal friction
+- **Complete:** Production-ready implementations, not prototypes
+
+**Start building with AI assistance that actually works.**

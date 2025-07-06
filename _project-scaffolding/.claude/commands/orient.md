@@ -54,6 +54,8 @@ Analyze the current directory structure and files:
 - `.project-docs/` directory - Planning documents
 - `tasks/` directory - PRD and task files
 - `src/` directory - Source code structure
+- `_project-scaffolding/` directory - Indicates fresh template (setup needed)
+- Git remotes - Check upstream template connection
 
 **Workflow Stage Detection Logic:**
 ```
@@ -81,10 +83,11 @@ Based on detected stage, provide numbered options:
 ```
 📍 Status: Template Setup Required
 🎯 Next Actions:
-1. Copy scaffolding files to project root
-2. Run project initialization interview 
+1. Run /setup-project (transforms template to project workspace)
+2. Check git remotes for upstream template connection
 3. View complete setup instructions
 4. Learn about the 5-step workflow
+5. Get template updates anytime: git pull upstream main
 ```
 
 **Step 3 - PRD Creation:**
@@ -123,8 +126,9 @@ Based on detected stage, provide numbered options:
 🎯 Next Actions:
 1. Start new feature (create new PRD)
 2. Run final quality checks and testing
-3. Review project documentation
-4. Plan next development cycle
+3. Get latest template updates: git pull upstream main
+4. Review project documentation
+5. Plan next development cycle
 ```
 
 ### Phase 4: Self-Teaching Integration
