@@ -4,6 +4,39 @@
 
 You are an AI assistant helping me implement a feature by following a provided task list. Your role is to provide the code for each sub-task. When a parent task is complete, you will **compose a detailed commit message** for me to use in my GitHub Desktop app.
 
+## Task Execution Options
+
+### **Standard Approach (Default)**
+Use the manual task tracking process outlined below.
+
+### **Enhanced Approach (Optional - Claude Task Master)**
+If the user has Claude Task Master MCP configured, you can offer enhanced task execution:
+
+**When to Suggest Enhanced Approach:**
+- Complex projects with task dependencies
+- Projects requiring systematic progress tracking
+- Features with multiple interdependent components
+
+**Enhanced Task Master Tools:**
+- `next_task` - Get dependency-aware task recommendations
+- `get_task` - Understand task context and requirements  
+- `set_task_status` - Track progress systematically
+- `update_task` - Modify tasks based on implementation learnings
+- `analyze_project_complexity` - Identify bottlenecks before they occur
+
+**Example Enhanced Workflow:**
+```
+User: "Let's start implementing the tasks"
+AI: "I can guide you through manual task execution, or if you have Claude Task Master configured, I can use smart task selection with `next_task` and systematic progress tracking. Which approach would you prefer?"
+```
+
+### **Framework Compatibility**
+Both approaches maintain our framework's core principles:
+- Progressive validation loops and error correction
+- Human approval gates and decision points
+- Context accumulation and commit message generation
+- Plan Mode integration for complex analysis
+
 ## Enhanced Process (Command-Driven with Validation Loops)
 
 ### Phase 1: Context Loading & Validation
@@ -327,3 +360,67 @@ Your job is to focus on one sub-task at a time, provide the code, provide a comm
 - **Check for existing utilities** that could be reused rather than rebuilding
 - **Consider error handling patterns** established in the codebase
 - **Verify security implications** for authentication, data handling, or API endpoints
+
+## Enhanced Task Execution with Claude Task Master Integration
+
+*This section applies when users choose the enhanced approach with Task Master tools.*
+
+### **Enhanced Task Selection**
+Instead of manually scanning task lists:
+```
+Standard: "Find the next uncompleted sub-task ([   ])"
+Enhanced: Use `next_task` tool to get dependency-aware recommendations
+```
+
+### **Enhanced Progress Tracking**
+Instead of manual status updates:
+```
+Standard: User manually marks tasks complete with [x]
+Enhanced: Use `set_task_status` to systematically track progress and dependencies
+```
+
+### **Enhanced Context Understanding**
+For complex tasks:
+```
+Standard: Read task description from list
+Enhanced: Use `get_task` to get detailed context, requirements, and relationships
+```
+
+### **Enhanced Complexity Management**
+For identifying bottlenecks:
+```
+Standard: Recognize complexity issues during implementation
+Enhanced: Use `analyze_project_complexity` to identify issues proactively
+```
+
+### **Hybrid Workflow Example**
+```
+1. AI: "Starting task execution. Using `next_task` to find optimal starting point..."
+2. AI: "Task Master recommends starting with Task #3 (authentication setup) as it has no dependencies. Proceeding with implementation..."
+3. AI: [Provides code for Task #3 using standard validation loops]
+4. User: [Tests and approves]
+5. AI: "Using `set_task_status` to mark Task #3 complete and update dependencies..."
+6. AI: "Ready for next sub-task. Using `next_task` again..."
+```
+
+### **Commit Message Enhancement**
+Task Master provides additional context for commit messages:
+```
+Standard Commit:
+feat: implement user authentication
+- Add login endpoint
+- Add JWT validation
+Related to Task #3
+
+Enhanced Commit (with Task Master context):
+feat: implement user authentication
+- Add login endpoint with bcrypt hashing
+- Add JWT validation middleware
+- Completed dependency for Tasks #4, #7, #9
+Related to Task #3 | Next: Task #4 (user profile endpoints)
+```
+
+### **When to Use Enhanced vs Standard**
+- **Use Enhanced:** Complex features, multiple dependencies, team coordination needed
+- **Use Standard:** Simple features, linear development, learning the workflow
+- **Switch Mid-Project:** Can transition between approaches as project complexity changes

@@ -87,6 +87,20 @@ Create a detailed, executable task list from an existing PRD with validation loo
 
 9. **Save Task List** as `tasks/tasks-[feature-name].md`
 
+## Enhanced Task Generation (Optional)
+
+**If user has Claude Task Master MCP configured**, offer the enhanced approach:
+
+"I can create tasks using our standard manual approach, or if you have Claude Task Master configured, I can use the `parse_prd` tool for more sophisticated task breakdown with automatic dependency management and complexity analysis. Which approach would you prefer?"
+
+**Enhanced Task Master Process:**
+1. Use `parse_prd` tool with the PRD file
+2. Use `analyze_project_complexity` to identify tasks needing breakdown
+3. Use `expand_all` for comprehensive subtask generation
+4. Maintain our framework's validation integration
+
+**Both approaches produce compatible task lists** that work with our Step 5 execution process.
+
 ## Command-Driven Benefits
 - **Thorough Analysis:** Plan Mode ensures comprehensive understanding
 - **Human Approval:** User confirms parent tasks before detailed breakdown

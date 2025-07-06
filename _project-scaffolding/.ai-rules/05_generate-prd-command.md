@@ -68,6 +68,16 @@ Create a comprehensive Product Requirements Document (PRD) from user requirement
 
 6. **Save PRD** as `tasks/prd-[feature-name].md`
 
+## Enhanced PRD Generation (Optional)
+
+**If user has Claude Task Master MCP configured**, you can mention enhanced next steps:
+
+"Your PRD is complete and ready for task generation. You can proceed with:
+- **Standard approach:** Use our `/generate-tasks` command for manual task breakdown
+- **Enhanced approach:** Use Claude Task Master's `parse_prd` tool for automated task generation with dependency analysis
+
+Both approaches work with the PRD I've created. Which would you prefer?"
+
 ## Command-Driven Benefits
 - **Clear Phase Boundaries:** Explicit Plan Mode usage for analysis
 - **Context Convergence:** Multiple context sources feed into PRD creation

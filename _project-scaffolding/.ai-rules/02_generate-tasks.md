@@ -4,7 +4,38 @@
 
 To guide an AI assistant in creating a detailed, step-by-step task list in Markdown format based on an existing Product Requirements Document (PRD). The task list should guide a developer through implementation.
 
-## Output
+## Enhanced Task Generation Options
+
+### **Standard Approach (Default)**
+Use the process outlined below for AI-guided task generation with manual structuring.
+
+### **Enhanced Approach (Optional - Claude Task Master)**
+If the user has Claude Task Master MCP configured, you can offer enhanced task generation:
+
+**When to Suggest Enhanced Approach:**
+- Complex projects with many dependencies
+- PRDs with sophisticated requirements
+- Projects requiring detailed complexity analysis
+
+**Enhanced Task Master Tools:**
+- `parse_prd` - Automatically parse PRD into structured tasks with dependencies
+- `analyze_project_complexity` - Identify tasks needing further breakdown
+- `expand_all` - Break down complex tasks into manageable subtasks
+
+**Example Enhanced Workflow:**
+```
+User: "Generate tasks from my PRD at tasks/prd-feature-name.md"
+AI: "I can create tasks using our standard approach, or if you have Claude Task Master configured, I can use the enhanced `parse_prd` tool for more sophisticated task breakdown with dependency analysis. Which would you prefer?"
+```
+
+### **Framework Compatibility**
+Regardless of approach chosen, maintain our framework's core principles:
+- Human approval gates between phases
+- Context accumulation in AI_CONTEXT.md
+- Progressive validation integration
+- Chat AI ↔ CLI AI collaboration patterns
+
+## Standard Process (Default Approach)
 
 - **Format:** Markdown (`.md`)
 - **Location:** `/tasks/`

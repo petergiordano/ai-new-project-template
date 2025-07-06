@@ -161,3 +161,17 @@ This ensures that every PRD includes clear, testable criteria that can be system
 1.  Do NOT start implementing the PRD.
 2.  Begin by asking me clarifying questions.
 3.  After I answer, take my answers and generate the complete PRD.
+
+## PRD Enhancement for Task Master Integration
+
+**If the user mentions using Claude Task Master for task generation**, ensure your PRD includes:
+- Clear dependency relationships between features
+- Complexity indicators for features that may need breakdown
+- Structured acceptance criteria that Task Master can parse effectively
+- Feature scope clearly defined to support automatic task generation
+
+**This enhanced structure supports both:**
+- Standard manual task generation (Step 4 of our workflow)
+- Enhanced Task Master `parse_prd` automation
+
+**The PRD format remains the same** - these enhancements are about clarity and structure that benefits both approaches.
