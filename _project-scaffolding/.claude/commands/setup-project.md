@@ -43,11 +43,11 @@ Execute these file operations in order:
    echo "   ✅ Created TODO.md"
    ```
 
-2. **Remove template development files:**
+2. **Prepare Chat AI setup directory:**
    ```bash
    echo "🧹 Cleaning up template files..."
-   rm -rf "claude-project/"
-   echo "   ✅ Removed claude-project/ (template strategist files)"
+   # Keep setup-claude-chat-ai/ directory for user to configure Chat AI Strategist
+   echo "   ✅ Preserved setup-claude-chat-ai/ (Chat AI setup instructions)"
    # Note: Keep original README.md as framework documentation
    ```
 
@@ -72,16 +72,19 @@ echo "   ✅ AI_CONTEXT.md (ready for project context)"
 echo "   ✅ .ai-rules/ (workflow instructions)"
 echo "   ✅ .project-docs/ (planning templates)"
 echo "   ✅ src/ (source code directory)"
+echo "   📋 setup-claude-chat-ai/ (Chat AI Strategist setup)"
 echo ""
 echo "🚀 Your Development Journey:"
 echo ""
 echo "   1. ✅ 'Save As...' template → your-project-workspace"
 echo "   2. ✅ /setup-project (one-time workspace setup) ← YOU ARE HERE"
-echo "   3. 🔄 /start-coding (foundation → PRD → tasks → implementation)"
-echo "   4. 🔄 /start-coding (next feature: PRD → tasks → implementation)"
-echo "   5. 🧭 /orient (anytime navigation)"
+echo "   3. 🔄 Setup Chat AI Strategist (see setup-claude-chat-ai/)"
+echo "   4. 🔄 /start-coding (foundation → PRD → tasks → implementation)"
+echo "   5. 🔄 /start-coding (next feature: PRD → tasks → implementation)"
+echo "   6. 🧭 /orient (anytime navigation)"
 echo ""
 echo "💡 Next Steps:"
+echo "   • RECOMMENDED: Set up Chat AI Strategist (see setup-claude-chat-ai/)"
 echo "   • Run /start-coding to begin feature development"
 echo "   • Run /orient anytime to check current state"
 echo "   • Your project README is now README-project.md"

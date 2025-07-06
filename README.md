@@ -35,9 +35,10 @@ That's it! The commands will guide you through everything else.
 ```
 1. "Save As..." template → your-project-workspace
 2. /setup-project (one-time workspace setup)
-3. /start-coding (foundation → PRD → tasks → implementation)
-4. /start-coding (next feature: PRD → tasks → implementation)
-5. /orient (anytime navigation)
+3. Setup Chat AI Strategist (recommended)
+4. /start-coding (foundation → PRD → tasks → implementation)
+5. /start-coding (next feature: PRD → tasks → implementation)
+6. /orient (anytime navigation)
 ```
 
 ### **What Each Command Does:**
@@ -71,6 +72,7 @@ your-project/
 ├── .project-docs/              # Project planning documents
 ├── src/                        # Your application source code
 ├── tasks/                      # Feature PRDs and task lists
+├── setup-claude-chat-ai/       # Chat AI Strategist setup instructions
 ├── README-project.md           # Your project's README
 ├── TODO.md                     # Development task tracking
 ├── AI_CONTEXT.md              # AI assistant briefing
