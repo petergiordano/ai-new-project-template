@@ -28,6 +28,18 @@
 
 ---
 
+## 2.5. Environment Configuration
+
+- **Shell:** [detected shell type - zsh/bash]
+- **Python Environment:** [conda/venv/other]
+- **Environment Name:** [project-specific environment name]
+- **Dependency Manager:** [pip/conda/both]
+- **Python Version:** [e.g., Python 3.11]
+- **VS Code Terminal:** [matches system shell: yes/no]
+- **Environment Setup Notes:** [any special configuration needed]
+
+---
+
 ## 3. File & Folder Structure
 
 - **`/src`**: Contains all application source code.

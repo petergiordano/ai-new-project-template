@@ -30,6 +30,106 @@ fi
 echo "✅ Fresh template detected - proceeding with setup..."
 ```
 
+### Phase 1.5: Environment Detection & Setup
+
+Detect and configure development environment before proceeding:
+
+```bash
+echo "🔧 Detecting development environment..."
+
+# Detect current shell
+CURRENT_SHELL=$(echo $SHELL)
+VSCODE_SHELL=$(echo $0)
+echo "   🐚 System shell: $CURRENT_SHELL"
+echo "   🐚 VS Code shell: $VSCODE_SHELL"
+
+# Check if VS Code terminal shell matches system shell
+if [[ "$VSCODE_SHELL" != *"$(basename $CURRENT_SHELL)"* ]]; then
+    echo "   ⚠️  VS Code terminal shell mismatch detected"
+    echo "   💡 Recommendation: Set VS Code terminal to match system shell"
+    echo "      1. Open Command Palette (Cmd+Shift+P)"
+    echo "      2. Search 'Terminal: Select Default Profile'"
+    echo "      3. Choose '$(basename $CURRENT_SHELL)' to match system shell"
+    echo ""
+fi
+
+# Detect Python environment managers
+echo "   🐍 Detecting Python environment managers..."
+
+# Check for conda
+CONDA_AVAILABLE=false
+if command -v conda >/dev/null 2>&1; then
+    CONDA_VERSION=$(conda --version 2>/dev/null)
+    echo "   ✅ Conda detected: $CONDA_VERSION"
+    CONDA_AVAILABLE=true
+else
+    echo "   ❌ Conda not found in PATH"
+    
+    # Check common conda locations
+    CONDA_PATHS=(
+        "/opt/homebrew/bin/conda"
+        "/usr/local/bin/conda" 
+        "$HOME/miniconda3/bin/conda"
+        "$HOME/anaconda3/bin/conda"
+    )
+    
+    for conda_path in "${CONDA_PATHS[@]}"; do
+        if [ -f "$conda_path" ]; then
+            echo "   🔍 Found conda at: $conda_path"
+            echo "   💡 Try: source $($conda_path info --base)/etc/profile.d/conda.sh"
+            break
+        fi
+    done
+fi
+
+# Check for Python venv
+PYTHON_VERSION=$(python3 --version 2>/dev/null || echo "Not found")
+echo "   🐍 Python3: $PYTHON_VERSION"
+
+if command -v python3 >/dev/null 2>&1; then
+    echo "   ✅ Python venv available (python3 -m venv)"
+else
+    echo "   ❌ Python3 not found - may need installation"
+fi
+
+# Environment recommendation
+echo ""
+echo "📋 Environment Setup Recommendation:"
+if [ "$CONDA_AVAILABLE" = true ]; then
+    echo "   🎯 RECOMMENDED: Use conda for environment management"
+    echo "   📝 Command: conda create -n [project-name] python=3.11 -y"
+    echo "   📝 Activate: conda activate [project-name]"
+else
+    echo "   🎯 FALLBACK: Use Python venv for environment management"
+    echo "   📝 Command: python3 -m venv venv"
+    echo "   📝 Activate: source venv/bin/activate"
+    echo "   💡 Consider installing conda for better environment management"
+fi
+echo ""
+
+# Shell configuration check
+echo "🔧 Shell Configuration Status:"
+SHELL_CONFIG=""
+case "$(basename $CURRENT_SHELL)" in
+    "zsh")
+        SHELL_CONFIG="~/.zshrc"
+        ;;
+    "bash")
+        SHELL_CONFIG="~/.bash_profile or ~/.bashrc"
+        ;;
+    *)
+        SHELL_CONFIG="shell-specific config file"
+        ;;
+esac
+
+echo "   📁 Shell config: $SHELL_CONFIG"
+echo "   💡 If conda commands fail, try: source $SHELL_CONFIG"
+echo ""
+
+echo "✅ Environment detection complete - proceeding with project setup..."
+echo ""
+```
+
 ### Phase 2: Smart Git Configuration
 
 Configure git remotes properly for template workflow with template updates:

@@ -20,6 +20,21 @@
 
 **📝 COMMITTED TO GITHUB:** All enhancements successfully committed and pushed
 
+### ✅ ENVIRONMENT SETUP ENHANCEMENT - **COMPLETED**
+- **Problem:** VS Code terminal shell mismatches causing conda failures
+- **Solution:** Added comprehensive environment detection to `/project-setup`
+- **Enhanced Files:**
+  - **`.claude/commands/project-setup.md`** - Added Phase 1.5 environment detection
+  - **`WORKFLOW_GUIDE.md`** - Added environment troubleshooting section
+  - **`AI_CONTEXT.md`** - Added environment configuration tracking
+- **Features Added:**
+  - Shell mismatch detection (VS Code vs system shell)
+  - Conda/Python environment manager detection
+  - Environment setup recommendations (conda preferred, venv fallback)
+  - Shell configuration guidance
+  - VS Code terminal profile recommendations
+- **Benefits:** Prevents conda/shell issues like versusMonster project encountered
+
 ### ✅ CRITICAL FIX: Claude Command Accessibility - **COMPLETED**
 - **Problem Discovered:** `.claude/` commands in scaffolding created chicken-and-egg problem
 - **Root Cause:** Users need `/project-setup` to access commands, but commands weren't available until after setup

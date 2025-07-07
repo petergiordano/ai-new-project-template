@@ -47,6 +47,32 @@ If you haven't completed workspace setup yet:
 3. **Customize your README.md** for your specific project
 4. **Come back here** to begin the development workflow
 
+### **Environment Troubleshooting**
+
+Common environment issues and solutions:
+
+#### **VS Code Terminal Shell Mismatch**
+- **Problem:** Commands fail or conda not found despite being installed
+- **Check:** Command Palette (Cmd+Shift+P) → "Terminal: Select Default Profile"
+- **Fix:** Set to match system shell (zsh on macOS, bash on Linux)
+- **Verify:** `echo $SHELL` should match VS Code terminal
+
+#### **Conda Not Found**
+- **Initialize conda:** `conda init zsh` (or bash) then restart terminal
+- **Source shell config:** `source ~/.zshrc` (or ~/.bash_profile)
+- **Manual conda path:** Check `/opt/homebrew/bin/conda` or `~/miniconda3/bin/conda`
+- **Alternative:** Use `python3 -m venv venv` if conda unavailable
+
+#### **Python Environment Issues**
+- **Missing Python3:** Install via Homebrew: `brew install python`
+- **Version conflicts:** Use specific versions: `python3.11 -m venv venv`
+- **Permission errors:** Check directory permissions or use `--user` flag
+
+#### **Git Configuration Issues**
+- **Missing remotes:** Run `/project-setup` to configure template remote
+- **Clone issues:** Ensure you cloned YOUR fork, not the template repo
+- **Update problems:** Check `git remote -v` shows both origin and template
+
 ---
 
 ## Using Plan Mode Effectively
