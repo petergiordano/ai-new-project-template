@@ -187,9 +187,32 @@ git pull template main
 4. Verify git remotes: `git remote -v` (should show your repository + template)
 5. Create fresh repository from template if needed
 
+## 🤖 Optional: Claude Project Companion
+
+For enhanced Chat AI assistance with persistent project knowledge:
+
+### **What is a Claude Project?**
+- Dedicated AI workspace with your project's context
+- No need to reload context each session
+- Quick project status checks: "What's my current status?"
+- Consistent architectural guidance
+
+### **Setup Guide**
+- See `setup-claude-chat-ai/` for complete instructions
+- Use provided template for project instructions
+- Integrates seamlessly with the 5-step workflow
+- Can be added anytime during development
+
+### **Benefits**
+- ✅ **Instant Orientation:** Start each session immediately
+- ✅ **Persistent Knowledge:** Context survives between sessions
+- ✅ **Quick Status Checks:** Find current work in seconds
+- ✅ **Better Prompts:** Enhanced context for CLI AI
+
 ## 📚 Learn More
 
 - **Complete Guide:** See `WORKFLOW_GUIDE.md` for detailed workflow
+- **Claude Project Setup:** See `setup-claude-chat-ai/README.md`
 - **AI Instructions:** Explore `.ai-rules/` for AI command details
 - **Context Engineering:** Built on proven AI collaboration principles
 - **Template Evolution:** This template continuously improves - use template updates to benefit!

@@ -173,11 +173,42 @@ After presenting the generated documents:
 2. **Offer targeted updates:** Focus on specific sections rather than regenerating entire documents
 3. **Confirm completion:** Once satisfied, remind user to save these documents in their `.project-docs/` directory
 
+## Optional Phase F: Claude Project Assistant Setup
+
+### **When to Include This Phase:**
+- User plans to use Claude as their Chat AI Strategist
+- User wants persistent project knowledge across sessions
+- Project has complex architecture or multiple components
+- User wants quick project status reference capabilities
+
+### **Phase F Questions (→ Claude Project Instructions)**
+Ask these questions if user wants a Claude project companion:
+
+1. **Claude Project Usage:** "Do you plan to use Claude as your Chat AI Strategist? Would you like to set up a Claude Project for persistent knowledge?"
+2. **Project Identity:** "How would you summarize your project's core mission in one sentence for the AI assistant?"
+3. **Technical Components:** "What are the main technical components or subsystems in your architecture?"
+4. **Development Philosophy:** "What development principles should guide the AI's suggestions? (e.g., 'function over fashion', 'test-driven', 'iterative')"
+5. **Integration Points:** "What external systems, APIs, or content sources will you integrate with?"
+6. **Success Metrics:** "What specific, measurable criteria define success for your project?"
+7. **Critical Constraints:** "What limitations must the AI always remember? (technical, time, resources, compatibility)"
+
+### **Claude Project Setup Guidance:**
+If user opts for Claude Project setup:
+
+1. **Direct them to:** `setup-claude-chat-ai/README.md` for detailed instructions
+2. **Mention the template:** `setup-claude-chat-ai/TEMPLATE_claude-project-instructions.md`
+3. **Highlight benefits:**
+   - Persistent project knowledge across sessions
+   - Quick Project Status Reference for instant orientation
+   - Consistent architectural guidance
+   - Enhanced prompt preparation for CLI AI
+
 ## Final Instructions
 
 - **Use Plan Mode for safe exploration** when using Claude Code CLI
-- Complete all five phases before generating any documents
+- Complete all five phases (plus optional Phase F) before generating any documents
 - Don't rush through questions - depth is more valuable than speed
 - If a user's project idea is unclear, help them clarify it before proceeding
 - **Leverage existing project context** discovered in Plan Mode to ask more informed questions
+- **Offer Claude Project setup** if user plans to use Claude as Chat AI Strategist
 - Remember: these documents become the foundation for all future AI interactions on this project

@@ -210,6 +210,34 @@
 
 ---
 
+## 12. Quick Project Status Reference
+
+### **For immediate project orientation, check these locations in order:**
+
+**1. Current Status & Active Work**
+- **File:** `TODO.md` → Section "### 🎯 Active Tasks"
+- **Purpose:** Shows what's currently in progress and immediate next steps
+- **Example:** "Complete Component 1 ✅, Start Component 2 implementation"
+
+**2. Detailed Component Status**
+- **File:** `AI_CONTEXT.md` → Section "7. Current Project Context State"
+- **Purpose:** Shows completed features with dates, current active features, and accumulated context
+- **Example:** Feature status, architectural decisions, lessons learned
+
+**3. Next Steps & Planning**
+- **File:** `TODO.md` → Section "### 📋 Next Up"
+- **Purpose:** Shows immediate next actions and strategic direction
+- **Example:** "Ready for next feature PRD creation"
+
+**4. Detailed Task Information**
+- **Location:** `tasks/` folder
+- **Purpose:** Specific PRDs and task breakdowns for each feature
+- **Example:** `tasks/tasks-prd-[feature-name].md` for implementation details
+
+**This reference pattern enables both Chat AI and CLI AI to quickly understand project state without context hunting.**
+
+---
+
 ## IMPORTANT: Context Continuity Instructions
 
 ### **For New AI Sessions:**

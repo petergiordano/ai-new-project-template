@@ -62,10 +62,11 @@ Ready to begin? (This follows .ai-rules/00_project_initialization_rule.md)
 
 Load and execute project initialization:
 1. Read `.ai-rules/00_project_initialization_rule.md`
-2. Conduct 5-phase structured interview
+2. Conduct 5-phase structured interview (includes optional Phase F for Claude Project)
 3. Generate all foundation documents
 4. Populate `AI_CONTEXT.md` with project-specific context
 5. After completion, guide to feature development
+6. **If user opted for Claude Project:** Direct to `setup-claude-chat-ai/` for setup
 
 #### **Stage: needs_feature_prd**
 ```markdown
@@ -152,6 +153,10 @@ Handle workflow transitions and user guidance:
 case $COMPLETED_STEP in
     "foundation")
         echo "✅ Project foundation complete!"
+        if [ -f "setup-claude-chat-ai/claude-project-instructions.md" ]; then
+            echo "🤖 Claude Project instructions generated!"
+            echo "💡 See setup-claude-chat-ai/README.md to set up persistent knowledge"
+        fi
         echo "🎯 Next: Run /start-coding again to define your first feature"
         ;;
     "prd")

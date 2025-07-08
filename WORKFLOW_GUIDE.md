@@ -478,6 +478,100 @@ Claude Task Master is an AI-powered task management system that integrates with 
 
 ---
 
+## 🤖 Claude Project Companion Setup (Optional)
+
+*This section explains how to enhance your Chat AI experience with a dedicated Claude Project for persistent knowledge and quick status checks.*
+
+### **What is a Claude Project?**
+
+A Claude Project is a dedicated workspace within Claude.ai that provides:
+- **Persistent Knowledge:** Project context survives between sessions
+- **Quick Status Checks:** Instant orientation without reloading context
+- **Knowledge Base:** Upload and reference project documents
+- **Custom Instructions:** Project-specific AI behavior and constraints
+
+### **Benefits of Claude Project Integration**
+
+**Enhanced Chat AI Capabilities:**
+- No need to paste AI_CONTEXT.md at every session start
+- Quick Project Status Reference for instant orientation
+- Consistent architectural guidance across sessions
+- Better context preparation for CLI AI prompts
+
+**Improved Development Flow:**
+- Start each session with "What's my current status?" 
+- Get immediate, accurate project orientation
+- Maintain architectural consistency automatically
+- Reduce context drift between sessions
+
+### **Setting Up Your Claude Project**
+
+**1. During Project Initialization (Step 1):**
+- CLI AI will ask if you want Claude Project setup (Phase F)
+- Answer the additional questions about project identity and constraints
+- Receive customized Claude Project instructions
+
+**2. Create Your Claude Project:**
+```
+1. Go to Claude.ai
+2. Click "Create Project"
+3. Name it: "[YourProjectName] Development"
+4. Use the generated instructions from Phase F
+5. Upload key documents to knowledge base:
+   - AI_CONTEXT.md (most important)
+   - WORKFLOW_GUIDE.md
+   - Active PRDs from tasks/ folder
+```
+
+**3. Use the Quick Project Status Reference:**
+```
+You: "What's my current status?"
+
+Claude: "Checking your project status...
+- Active Tasks (TODO.md): Component 2 Voice Generation in progress
+- Current Feature: Script Parser complete, Voice Generation started
+- Next Steps: Implement ElevenLabs API integration
+- Task Details: See tasks/tasks-prd-voice-generation.md"
+```
+
+### **Claude Project Maintenance**
+
+**When to Update:**
+- After completing major features
+- When architectural decisions change
+- When switching to new development phase
+- Monthly review and cleanup
+
+**What to Update:**
+- Project instructions with new constraints or goals
+- Knowledge base with latest AI_CONTEXT.md
+- Remove outdated PRDs, add new ones
+- Update success metrics based on progress
+
+### **Integration with Template Workflow**
+
+**Step 2 Enhancement:**
+Instead of pasting AI_CONTEXT.md, simply ask: "What's our current project status?"
+
+**Step 3 Enhancement:**
+Claude Project maintains awareness of existing features for better PRD creation
+
+**Step 4 Enhancement:**
+Task generation considers accumulated project patterns automatically
+
+**Step 5 Enhancement:**
+Better context preparation for CLI AI based on persistent knowledge
+
+### **Template Files for Claude Project**
+
+- **Instructions Template:** `setup-claude-chat-ai/TEMPLATE_claude-project-instructions.md`
+- **Setup Guide:** `setup-claude-chat-ai/README.md`
+- **Integration Points:** Designed to work seamlessly with 5-step workflow
+
+**Tip:** Even if you don't set up a Claude Project initially, you can add one anytime by using the template and your current AI_CONTEXT.md.
+
+---
+
 ## 🛠️ Advanced Features & Context Engineering
 
 This workflow leverages advanced context engineering principles:
