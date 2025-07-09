@@ -57,6 +57,16 @@ I'll guide you through Step 1: Project Initialization to create:
 
 This takes 10-15 minutes and creates the foundation for all future features.
 
+Here's what we'll accomplish in this step:
+- [ ] Phase A: Project Vision & Strategy (Roadmap.md)
+- [ ] Phase B: User Experience & Emotional Design (VibeTesting.md)
+- [ ] Phase C: Design System & Visual Identity (ComponentLibrary.md)
+- [ ] Phase D: First Sprint Planning (SLC_Session_Notes.md)
+- [ ] Phase E: Technical Foundation & AI Context (AI_CONTEXT.md)
+- [ ] Optional Phase F: Claude Project Assistant Setup (if desired)
+
+The AI will guide you through questions for each phase. As each phase is completed, the corresponding document will be generated.
+
 Ready to begin? (This follows .ai-rules/00_project_initialization_rule.md)
 ```
 

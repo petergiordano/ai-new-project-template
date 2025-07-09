@@ -82,6 +82,7 @@ Based on detected stage, provide numbered options:
 **Template Setup Mode:**
 ```
 📍 Status: Template Setup Required
+   (Detected because the `_project-scaffolding/` directory exists, indicating setup hasn't run)
 🎯 Next Actions:
 1. Run /project-setup (transforms template to project workspace)
 2. Check git remotes for template remote connection
@@ -93,6 +94,7 @@ Based on detected stage, provide numbered options:
 **Step 3 - PRD Creation:**
 ```
 📍 Status: Step 3 - Product Requirements Document
+   (Detected because AI_CONTEXT.md exists, but no PRD files were found in tasks/)
 🎯 Next Actions:
 1. Start feature development workflow (/start-coding)
 2. Create PRD for new feature (guided by /start-coding)
@@ -102,7 +104,8 @@ Based on detected stage, provide numbered options:
 
 **Step 4 - Task Generation:**
 ```
-📍 Status: Step 4 - Task List Generation  
+📍 Status: Step 4 - Task List Generation
+   (Detected because a PRD file (e.g., tasks/prd-*.md) exists, but no corresponding task list (tasks/tasks-*.md) was found)
 🎯 Next Actions:
 1. Continue feature development workflow (/start-coding)
 2. Generate tasks from existing PRD (guided by /start-coding)
@@ -113,6 +116,7 @@ Based on detected stage, provide numbered options:
 **Step 5 - Task Execution:**
 ```
 📍 Status: Step 5 - Active Development
+   (Detected because task list files (e.g., tasks/tasks-*.md) exist with uncompleted tasks)
 🎯 Next Actions:
 1. Continue task execution (/start-coding)
 2. Execute next task from task list (guided by /start-coding)
@@ -123,6 +127,7 @@ Based on detected stage, provide numbered options:
 **Feature Complete:**
 ```
 📍 Status: Feature Complete
+   (Detected because all tasks in existing task lists appear to be completed)
 🎯 Next Actions:
 1. Start new feature development (/start-coding)
 2. Run final quality checks and testing
